@@ -1,0 +1,351 @@
+@import "../../scss/abstracts/variables";
+@import "../../scss/abstracts/mixins";
+
+footer {
+  @include baseStyles;
+
+  position: relative;
+  max-width: 1344px;
+  margin: 160px auto 0;
+}
+
+footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+footer .menu-section {
+  display: flex;
+}
+
+/*
+ * Social links
+ */
+footer .social-links {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+
+  /* InVision matching */
+  transform: translateY(2px);
+
+  a {
+      width: 32px;
+      height: 32px;
+      display: inline-block;
+  }
+
+  /* spacing between links */
+  a:not(:last-of-type) {
+      margin-right: 8px;
+  }
+
+  /* icons */
+  img {
+      width: 32px;
+  }
+}
+
+footer .menu-group {
+
+  &:last-of-type {
+    flex-grow: 2;
+  }
+
+  h4{
+    margin-bottom: 23px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 6px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #2a3cb9;
+    text-transform: uppercase;
+
+    /**
+     * Menu header links
+     */
+    a {
+        height: 20px;
+        color: #cfd8dc;
+        font-size: 14px;
+        font-family: 'BrandonText-Black';
+        font-weight: 900;
+        letter-spacing: 1.75px;
+        line-height: 20px;
+
+        &:hover {
+          color: $green;
+        }
+    }
+  }
+
+}
+
+/**
+ * NAVIGATION LISTS
+ */
+.menu-group {
+
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 180px;
+    margin-right: 61px;
+
+    li {
+      margin-bottom: 0.1rem;
+
+      a {
+        color: #90a4ae;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        display: inline-block;
+        line-height: 1rem;
+
+        &:hover {
+          color: $green;
+        }
+      }
+    }
+  }
+
+  .nav-list--resources {
+    li {
+      margin-bottom: 0.8rem;
+    }
+  }
+}
+
+/**
+  * LOWER SECTION ( Growth Tools icon, copyright, privacy + terms )
+  */
+.lower {
+    margin-top: 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logo {
+        height: 30px;
+    }
+
+    .logo img {
+        width: 30px;
+    }
+
+    .logo .mobile {
+      display: none;
+    }
+
+    .copyright {
+        margin-top: 17px;
+        display: flex;
+        height: 17px;
+        color: #90a4ae;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 17px;
+        text-align: center;
+
+        /* Wrapper around "Growth Tools" */
+        span {
+            transform: translateY(-1px);
+            display: inline-block;
+            font-weight: 500;
+            margin-left: 3px;
+            margin-right: 3px;
+        }
+
+        a {
+            color: #2cd886;
+            margin-left: 3px;
+        }
+    }
+}
+
+/*
+ * USER ACTIONS
+ * Sign In + Create Account buttons
+ */
+footer .user-actions {
+  height: max-content;
+  margin-top: 46px;
+  padding-top: 24px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #2a3cb9;
+
+  &__btn-signin {
+    color: $sub-text;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 1.75px;
+    line-height: 20px;
+
+    &:hover {
+      color: $light-green;
+    }
+  }
+
+  &__btn-create-account {
+    @include flex-centered;
+    margin-left: 40px;
+    height: 32px;
+    width: 128px;
+    color: $light-green;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+    border: 2px solid $light-green;
+    border-radius: 6px;
+    transition: 0.1s ease-out;
+
+    &:hover {
+      background-color: $light-green;
+      color: white;
+    }
+
+    &:hover:not(:active) {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+/*
+ * LIGHTS ON THEME
+ */
+footer.lights-on {
+
+    .menu-group h4 {
+        border-bottom-color: #cfd8dc;
+
+        a {
+          color: #546e7a;
+        }
+
+        a:hover {
+          color: $green;
+        }
+    }
+
+    .copyright span {
+        color: rgba(#546e7a, 0.8);
+    }
+
+    /* Sign In + Create Account Buttons */
+    .user-actions {
+      border-top-color: #cfd8dc;
+
+      &__btn-signin {
+        flex-shrink: 0;
+      }
+
+      &__btn-create-account {
+        background-color: $light-green;
+        color: white;
+        box-shadow: 0 2px 12px 0 rgba(black, 0.18);
+
+        &:hover:not(:active) {
+          background-color: lighten($light-green, 10%);
+          border-color: lighten($light-green, 10%);
+          box-shadow: 2px 4px 12px 0 rgba(black, 0.18);
+        }
+      }
+    }
+}
+
+/*
+ * Increase max available width for menu groups on narrower viewports.
+ */
+@include for-xl-down {
+  .menu-group .nav-list {
+    margin-right: 24px;
+  }
+}
+
+@include for-lg-down {
+  footer {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  footer .menu-section {
+    flex-direction: column;
+
+    .menu-group {
+      h4,
+      .nav-list  {
+        padding-left: 6px;
+      }
+    }
+
+    .menu-group:not(:last-of-type) {
+      margin-bottom: 2.5rem;
+    }
+
+    /*
+     * Sets a two-column layout for menu group links if
+     * menu height would otherwise exceed 130px
+     * ________________________________________________ */
+
+    .nav-list {
+      height: 130px;
+      max-width: unset;
+    }
+
+    .nav-list li {
+      width: 50%;
+    }
+    /* _________________________________________________ */
+  }
+
+  footer .social-links {
+    width: 100%;
+    top: -4.5rem;
+    display: flex;
+    justify-content: center;
+
+  }
+
+  footer .lower {
+    .logo {
+      height: auto;
+    }
+
+    .logo .not-mobile {
+      display: none;
+    }
+
+    .logo .mobile {
+      display: inline-block;
+      width: 156px;
+    }
+
+    .copyright {
+      font-size: 11px;
+      line-height: 16px;
+    }
+  }
+
+  footer .user-actions {
+    justify-content: center;
+  }
+}
+
+/*
+ * Resets menu group links to a single-column layout.
+ */
+@include for-sm-down {
+  footer .menu-group .nav-list {
+    height: unset;
+
+    li {
+      width: 100%;
+    }
+  }
+}
