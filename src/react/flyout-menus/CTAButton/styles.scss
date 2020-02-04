@@ -1,0 +1,19 @@
+@import "../../../scss/abstracts/variables";
+
+#mobile-menu .flyout-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 72px;
+  border-top: 1px solid #cfd8dc;
+	color: $green;
+	font-family: "Brandon Text";
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 24px;
+
+  img {
+    width: 24px;
+    margin-right: 4px;
+  }
+}

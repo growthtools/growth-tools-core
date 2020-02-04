@@ -1,0 +1,40 @@
+@import "../../scss/abstracts/mixins";
+
+/*
+ * Stylesheet for styles shared across all the flyout menus.
+ * _________________________________________________________ */
+
+
+/*
+ * A CTA button that replaces the secondary (bottom) section
+ * of a flyout menu on mobile layouts.
+ */
+.tools-flyout__cta-btn {
+  display: none;
+
+  @include for-lg-down {
+    display: block;
+  }
+}
+
+.flyout-menu-anchor--mobile {
+  display: none;
+}
+
+@include for-lg-down {
+  /*
+   * Hide the secondary section on mobile layouts
+   */
+  [class$="flyout__secondary"] {
+    display: none;
+  }
+
+  .flyout-menu-anchor--mobile {
+    display: inline-block;
+    width: 24px;
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

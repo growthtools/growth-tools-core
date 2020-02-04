@@ -1,0 +1,227 @@
+@import "../../../scss/abstracts/variables";
+@import "../../../scss/abstracts/mixins";
+
+$resource-image-widths-mobile: (
+  "email sequence": 148px,
+  "lead magnets": 144px,
+  "funnel": 124px
+);
+
+.resources-flyout {
+  width: 1004px;
+  max-width: calc(100vw - 120px);
+	width: 1004px;
+	border-radius: 12px;
+  overflow: hidden;
+	background-color: white;
+	box-shadow: 0 2px 32px 0 rgba(0,0,0,0.3);
+
+  &__header {
+    color: $gu-grey;
+    font-family: "BrandonText-Black";
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  &__primary {
+    padding: 40px 62px 56px;
+  }
+
+  &__secondary {
+    padding: 40px;
+    border-top: 1px solid $grey-200;
+    background-color: $grey-100;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__secondary &__header {
+    width: 100%;
+    margin-bottom: 40px;
+    color: $sub-text;
+  }
+
+  &__popular {
+    margin-top: 17px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /*
+   * Add a border radius and drop shadow to the last 
+   * of the popular resources' images
+   */
+  &__popular li:nth-child(3) .image-wrapper img {
+    border-radius: 4px;
+    box-shadow: 0 2px 2px 1px rgba(black, 0.1);
+  }
+
+  &__popular-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .image-wrapper {
+      height: 168px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
+
+    label {
+      color: $gu-grey;
+      font-family: "BrandonText-Black";
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 1.75px;
+      line-height: 16px;
+      text-align: center;
+      max-width: 248px;
+      margin: 0 auto;
+      cursor: pointer;
+    }
+
+    img {
+      will-change: transform;
+      height: 100%;
+    }
+
+    img,
+    label {
+      transition: 0.3s ease-out;
+    }
+
+    &:hover label {
+      color: $green;
+    }
+
+    &:hover img {
+      transform: scale(1.03);
+    }
+  }
+
+  /*
+   * Recent blog post columns
+   * ________________________ */
+
+  [class^="recent-posts-list"] {
+    padding-left: 0;
+    width: 45.7%;
+
+    .recent-posts-list-item {
+      /* automatically set blog number with
+       * a counter */
+      counter-increment: blog-post-counter;
+
+      padding-left: 34px;
+      position: relative;
+      list-style: none;
+      width: 100%;
+
+      /* The blog post number */
+      &::before {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        content: counter(blog-post-counter);
+        color: $sub-text;
+        font-family: "BrandonText-Black";
+        font-size: 16px;
+        font-weight: 900;
+        letter-spacing: 2px;
+        line-height: 24px;
+      }
+
+      /* Spacing between posts */
+      &:not(:first-child) {
+        margin-top: 16px;
+        padding-top: 15px;
+        border-top: 1px solid $grey-200;
+      }
+
+      /* Blog post number needs to be raised for the
+       * first blog post */
+      &:first-child::before {
+        top: 0;
+      }
+    }
+
+    .recent-posts-list-item__link {
+      color: $black;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      transition: color 0.2s ease-out;
+
+      &:hover {
+        color: $grey-500;
+      }
+    }
+  }
+
+  .recent-posts-list--left {
+    counter-reset: blog-post-counter;
+  }
+
+  /*
+   * Reduce the overall height of the flyout on shorter viewports
+   * to prevent the flyout menu from overflowing below the fold.
+   */
+  @media screen and (max-height: 770px) {
+    &__primary,
+    &__secondary {
+      padding-top: 24px;
+    }
+
+    &__primary {
+      padding-bottom: 40px;
+    }
+
+    &__popular-link .image-wrapper {
+      height: 110px;
+    }
+  }
+
+  @include for-lg-down {
+    max-width: unset;
+    width: 100%;
+
+    &__primary {
+      padding-left: 32px;
+      padding-right: 32px;
+      padding-bottom: 24px;
+    }
+
+    &__secondary {
+      display: none;
+    }
+
+    &__popular {
+      margin-top: 40px;
+      flex-direction: column;
+
+      li:not(:first-child) {
+        margin-top: 8px;
+      }
+    }
+
+    &__popular-link .image-wrapper {
+      height: unset;
+    }
+
+    /*
+     * Update widths of the popular resources images
+     * _____________________________________________ */
+
+    @each $resource, $width in $resource-image-widths-mobile {
+      img[alt^="#{$resource}"] {
+        width: $width
+      }
+    }
+  }
+}

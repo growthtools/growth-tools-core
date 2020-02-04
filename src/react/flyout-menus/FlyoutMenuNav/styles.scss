@@ -1,0 +1,202 @@
+@import "../../../scss/abstracts/variables";
+
+#flyout-menu-container {
+  font-family: "Brandon Text", sans-serif;
+
+  /*
+   * Flyout Menus
+   * _________________________________________ */
+
+  .flyout-menu {
+    position: absolute;
+    top: 69px;
+    will-change: transform;
+    transform: perspective(480px) rotateX(-15deg);
+    transform-origin: top center;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 20;
+  }
+
+  .menu-item-list {
+    position: relative;
+
+    &:not(:hover) .flyout-menu {
+      transition: transform 0.2s ease-out;
+      transition-delay: 0.1s;
+      transition-property: transform, opacity;
+    }
+  }
+
+  .menu-item {
+    width: auto;
+  }
+
+  .menu-item > label {
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+      height: 72px;
+      color: $grey;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 1.75px;
+      line-height: 20px;
+      padding: 0 20px;
+
+      &:hover {
+          color: $light-green;
+      }
+  }
+
+  .menu-item:hover .flyout-menu {
+    transform: perspective(480px) rotateX(0);
+    opacity: 1;
+    pointer-events: auto;
+    transition: transform 0.2s ease-out;
+  }
+
+  .flyout-menu--tools {
+    right: -56px;
+  }
+
+  .flyout-menu--classes {
+    right: -77px;
+  }
+
+  .flyout-menu--resources {
+    right: -72px;
+  }
+
+  .flyout-menu-anchor-box {
+    /* prevents anchor from being obscured by a 
+     * flyout menu's box shadow */
+    z-index: 21;
+
+    pointer-events: none;
+    display: flex;
+    position: absolute;
+    top: 56px;
+    left: 32px;
+    width: 24px;
+    opacity: 0;
+
+    &.blue .flyout-menu-anchor--blue {
+      opacity: 1;
+    }
+  }
+
+  .flyout-menu-anchor {
+    width: 100%;
+
+    &--blue {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      will-change: transform;
+    }
+  }
+
+  /*
+   * Flyout Menu Anchor Positions
+   * __________________________________________ */
+
+  .menu-item:hover ~ .flyout-menu-anchor-box {
+    opacity: 1;
+  }
+
+  .menu-item--resources:hover ~ .flyout-menu-anchor-box {
+    transform: translateX(116px);
+  }
+
+  .menu-item--classes:hover ~ .flyout-menu-anchor-box {
+    transform: translateX(240px);
+  }
+
+
+  /*
+   * Flyout Menu Animation Keyframes
+   * __________________________________________ */
+
+  .flyout-menu[class*="a-slide"] {
+    transform-origin: top right;
+    animation-duration: 0.25s;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+
+    /*
+     * During the primary flyout menu animation, hide the menu's
+     * primary and secondary content and fade it in after a
+     * short delay.
+     */
+    & [class$="flyout__primary"] > *,
+    & [class$="flyout__secondary"] > * {
+      opacity: 0;
+      animation-name: fadeIn;
+      animation-duration: 0.2s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-out;
+      animation-delay: 0.15s;
+    }
+  }
+
+  .flyout-menu--classes.a-slide-right {
+    animation-name: shiftRightClasses;
+  }
+
+  .flyout-menu--resources.a-slide-right {
+    animation-name: shiftRightResources;
+  }
+
+  .flyout-menu--tools.a-slide-left {
+    animation-name: shiftLeftTools;
+  }
+
+  .flyout-menu--classes.a-slide-left {
+    animation-name: shiftLeftClasses;
+  }
+
+  .flyout-menu--resources.a-slide-left {
+    animation-name: shiftLeftResources;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @keyframes shiftRightClasses {
+    from { transform: scaleY(1.14) translateX(-5px); }
+    to   { transform: none; }
+  }
+
+  @keyframes shiftRightResources {
+    from { transform: scale(0.864, 0.973) translateX(-16px); }
+    to   { transform: none; }
+  }
+
+  @keyframes shiftLeftTools {
+    from { transform: scale((1/0.864), (1/0.973)) translateX(16px); }
+    to   { transform: none; }
+  }
+
+  @keyframes shiftLeftResources {
+    from { transform: scaleY((1/1.14)) translateX(5px); }
+    to   { transform: none; }
+  }
+}
+
+/*
+ * Text colors themes
+ *
+ * Sets the appropriate text colors of the menu items according
+ * to the background color under the menu.
+ * ____________________________________________________________ */
+
+#flyout-menu-container.bg--light .menu-item > label {
+  color: rgba(black, 0.5);
+
+  &:hover {
+    color: white;
+  }
+}

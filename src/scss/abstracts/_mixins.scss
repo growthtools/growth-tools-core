@@ -1,0 +1,104 @@
+$grid-breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px
+);
+
+/*
+ * MOBILE-FIRST BREAKPOINTS
+ */
+
+@mixin for-sm-up {
+  @media (min-width: map-get($grid-breakpoints, "sm")) { @content; }
+}
+
+@mixin for-md-up {
+  @media (min-width: map-get($grid-breakpoints, "md")) { @content; }
+}
+
+@mixin for-lg-up {
+  @media (min-width: map-get($grid-breakpoints, "lg")) { @content; }
+}
+
+@mixin for-xl-up {
+  @media (min-width: map-get($grid-breakpoints, "xl")) { @content; }
+}
+
+/*
+ * DESKTOP-FIRST BREAKPOINTS
+ */
+
+@mixin for-xl-down {
+  @media (max-width: map-get($grid-breakpoints, "xl")) { @content; }
+}
+
+@mixin for-lg-down {
+  @media (max-width: map-get($grid-breakpoints, "lg")) { @content; }
+}
+
+@mixin for-md-down {
+  @media (max-width: map-get($grid-breakpoints, "md")) { @content; }
+}
+
+@mixin for-sm-down {
+  @media (max-width: map-get($grid-breakpoints, "sm")) { @content; }
+}
+
+/*
+ * FLEXBOX
+ */
+
+@mixin flex-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+ * OVERFLOW BEHAVIOR
+ */
+
+@mixin overflowYScroll {
+  overflow-y: scroll;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+/*
+ * BASE STYLES
+ */
+
+@mixin baseStyles {
+  font-family: "Brandon Text", sans-serif;
+
+  &, & * {
+    box-sizing: border-box;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  button,
+  a,
+  ul,
+  ol,
+  input {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ul,
+  ol {
+    padding-left: 0;
+    list-style: none;
+  }
+}

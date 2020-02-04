@@ -1,0 +1,11 @@
+webpack.config.js
+
+.gitignore
+
+# Do not include source files in the package
+src/
+
+# Vim
+*~
+*.swp
+*.swo
