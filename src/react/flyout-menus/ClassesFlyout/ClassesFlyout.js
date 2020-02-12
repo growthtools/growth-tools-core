@@ -3,7 +3,10 @@ import PropTypes from "prop-types";
 import "../shared-styles.scss";
 import "./styles.scss";
 import CTAButton from "../CTAButton/CTAButton";
-import { GROWTH_TOOLS_DOMAIN, GOOGLE_STORAGE_DOMAIN } from "../../../js/constants";
+import {
+  GROWTH_TOOLS_DOMAIN,
+  GOOGLE_STORAGE_DOMAIN
+} from "../../../js/constants";
 
 import { whiteIconSrcForAcceleratorType } from "../../../js/utility";
 
@@ -22,7 +25,7 @@ const ACCELERATORS = {
     logoSrc: ACCELERATOR_ICON_HIRING
   },
   Launch: {
-    pageUrl: `${GROWTH_TOOLS_DOMAIN}/training`,
+    pageUrl: `${GROWTH_TOOLS_DOMAIN}/launch-accelerator`,
     logoSrc: ACCELERATOR_ICON_LAUNCH
   },
   HighTicket: {
@@ -50,7 +53,9 @@ const ACCELERATORS = {
  */
 function ClassesFlyout(props) {
   if (!props.currentAccelerator) {
-    console.error("Cannot render ClassesFlyout Component: props.currentAccelerator is not defined!");
+    console.error(
+      "Cannot render ClassesFlyout Component: props.currentAccelerator is not defined!"
+    );
     return null;
   }
 
@@ -121,12 +126,8 @@ function ClassesFlyout(props) {
 
       {/* CTA button to replace secondary section on mobile layouts */}
       <div className="tools-flyout__cta-btn">
-        <CTAButton
-          label="Show all marketing classes"
-          href="/training"
-        />
+        <CTAButton label="Show all marketing classes" href="/training" />
       </div>
-
 
       {/* Mobile anchor icon */}
       <img

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./styles.scss";
 
-import {GROWTH_TOOLS_DOMAIN, GOOGLE_STORAGE_DOMAIN} from "../../js/constants";
+import { GROWTH_TOOLS_DOMAIN, GOOGLE_STORAGE_DOMAIN } from "../../js/constants";
 
 //
 // Icons
@@ -26,24 +26,42 @@ const LINKS_FREE_TOOLS = [
   { name: "One Click", href: "https://getoneclick.com" },
   { name: "Don't Hit Publish", href: "https://donthitpublish.com" },
   { name: "DripScripts", href: "https://dripscripts.com" },
-  { name: "Agent", href: "https://myspeakingagent.com" },
+  { name: "Agent", href: "https://myspeakingagent.com" }
 ];
 
 const LINKS_RESOURCES = [
   { name: "Blog", href: "https://blog.videofruit.com" },
-  { name: "6-Part Email Sales Sequence", href: "https://dripscripts.growthtools.com/seq/product-launch/" },
-  { name: "4 Plug-and-Play Lead Magnet Templates", href: "https://attract.growthtools.com" },
-  { name: "5-Part High Ticket Sales Funnel Checklist", href: "https://videofruit.com/blog/high-ticket-sales/" },
+  {
+    name: "6-Part Email Sales Sequence",
+    href: "https://dripscripts.growthtools.com/seq/product-launch/"
+  },
+  {
+    name: "4 Plug-and-Play Lead Magnet Templates",
+    href: "https://attract.growthtools.com"
+  },
+  {
+    name: "5-Part High Ticket Sales Funnel Checklist",
+    href: "https://videofruit.com/blog/high-ticket-sales/"
+  }
 ];
 
 const LINKS_TRAINING = [
   { name: "Growth University", href: `${GROWTH_TOOLS_DOMAIN}/training` },
-  { name: "Partnership Accelerator", href: `${GROWTH_TOOLS_DOMAIN}/partnership-accelerator` },
-  { name: "Conversion Accelerator", href: `${GROWTH_TOOLS_DOMAIN}/conversion-accelerator` },
+  {
+    name: "Partnership Accelerator",
+    href: `${GROWTH_TOOLS_DOMAIN}/partnership-accelerator`
+  },
+  {
+    name: "Conversion Accelerator",
+    href: `${GROWTH_TOOLS_DOMAIN}/conversion-accelerator`
+  },
   { name: "Hiring Accelerator", href: `${GROWTH_TOOLS_DOMAIN}/training` },
   { name: "Webinar Accelerator", href: `${GROWTH_TOOLS_DOMAIN}/training` },
-  { name: "Launch Accelerator", href: `${GROWTH_TOOLS_DOMAIN}/training` },
-  { name: "High Ticket Accelerator", href: `${GROWTH_TOOLS_DOMAIN}/training` },
+  {
+    name: "Launch Accelerator",
+    href: `${GROWTH_TOOLS_DOMAIN}/launch-accelerator`
+  },
+  { name: "High Ticket Accelerator", href: `${GROWTH_TOOLS_DOMAIN}/training` }
 ];
 
 /**
@@ -82,7 +100,6 @@ function Footer(props) {
         </a>
         */}
       </div>
-      
 
       <div className="menu-section">
         {/* FREE TOOLS SECTION */}
@@ -143,8 +160,16 @@ function Footer(props) {
         {/* User Action Buttons
           * Sign In + Create Account */}
         <div className="user-actions">
-          <a className="user-actions__btn-signin" href={`${GROWTH_TOOLS_DOMAIN}/signin`}>SIGN IN</a>
-          <a className="user-actions__btn-create-account" href={`${GROWTH_TOOLS_DOMAIN}/register`}>
+          <a
+            className="user-actions__btn-signin"
+            href={`${GROWTH_TOOLS_DOMAIN}/signin`}
+          >
+            SIGN IN
+          </a>
+          <a
+            className="user-actions__btn-create-account"
+            href={`${GROWTH_TOOLS_DOMAIN}/register`}
+          >
             Create Account
           </a>
         </div>
@@ -219,7 +244,7 @@ Footer.propTypes = {
 function getListItemLink({ name, href }) {
   return (
     <li>
-      <a href={href} className="link-secondary"> {name} </a> 
+      <a href={href} className="link-secondary"> {name} </a>
     </li>
   );
 }
