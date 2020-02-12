@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Header from "./react/Header/Header"
-import Footer from "./react/Footer/Footer"
+import Header from "./react/Header/Header";
+import Footer from "./react/Footer/Footer";
+import MobileMenu from "./react/MobileMenu/MobileMenu";
+import FlyoutMenuNav from "./react/flyout-menus/FlyoutMenuNav/FlyoutMenuNav";
 
 import { logNoNodeForSelectorWarning } from "./js/logs";
 
@@ -32,9 +34,11 @@ const GROWTH_TOOLS_CORE = {
 };
 
 // Named Exports
-export {insertReactComponentIntoRoot};
-export {Header};
-export {Footer};
+export { insertReactComponentIntoRoot };
+export { Header };
+export { Footer };
+export { MobileMenu };
+export { FlyoutMenuNav };
 
 // Default Export
 export default GROWTH_TOOLS_CORE;
