@@ -25,7 +25,7 @@ const ACCELERATORS = {
     logoSrc: ACCELERATOR_ICON_HIRING
   },
   Launch: {
-    pageUrl: `${GROWTH_TOOLS_DOMAIN}/training`,
+    pageUrl: `${GROWTH_TOOLS_DOMAIN}/launch-accelerator`,
     logoSrc: ACCELERATOR_ICON_LAUNCH
   },
   HighTicket: {

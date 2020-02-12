@@ -59,7 +59,7 @@ const LINKS_TRAINING = [
   { name: "Webinar Accelerator", href: `${GROWTH_TOOLS_DOMAIN}/training` },
   {
     name: "Launch Accelerator",
-    href: `${GROWTH_TOOLS_DOMAIN}/training`
+    href: `${GROWTH_TOOLS_DOMAIN}/launch-accelerator`
   },
   { name: "High Ticket Accelerator", href: `${GROWTH_TOOLS_DOMAIN}/training` }
 ];
