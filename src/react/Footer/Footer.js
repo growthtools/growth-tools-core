@@ -4,6 +4,8 @@ import "./styles.scss";
 
 import { GROWTH_TOOLS_DOMAIN, GOOGLE_STORAGE_DOMAIN } from "../../js/constants";
 
+import ICON_GROWTH_TOOLS_WHITE from "../../assets/img/GT-icon@2x.png";
+
 //
 // Icons
 //
@@ -11,8 +13,6 @@ const ICON_FACEBOOK = `${GOOGLE_STORAGE_DOMAIN}/icons/social/facebook-grey.svg`;
 const ICON_FACEBOOK_DARK = `${GOOGLE_STORAGE_DOMAIN}/icons/social/facebook-blue@2x.png`;
 
 const ICON_GROWTH_TOOLS = `${GOOGLE_STORAGE_DOMAIN}/icons/gt-bars-green@2x.png`;
-const ICON_GROWTH_TOOLS_MOBILE = `${GOOGLE_STORAGE_DOMAIN}/logo/green-bars.svg`;
-const ICON_GROWTH_TOOLS_MOBILE_LIGHTS_ON = `${GOOGLE_STORAGE_DOMAIN}/logo/green-bars-blue-text.png`;
 
 //
 // Text Links
@@ -164,7 +164,7 @@ function Footer(props) {
             className="user-actions__btn-signin"
             href={`${GROWTH_TOOLS_DOMAIN}/signin`}
           >
-            SIGN IN
+            Sign in
           </a>
           <a
             className="user-actions__btn-create-account"
@@ -209,12 +209,12 @@ function Footer(props) {
           />
           {lightsAreOn
             ? <img
-                src={ICON_GROWTH_TOOLS_MOBILE_LIGHTS_ON}
+                src={ICON_GROWTH_TOOLS}
                 alt="Growth Tools"
                 className="mobile"
               />
             : <img
-                src={ICON_GROWTH_TOOLS_MOBILE}
+                src={ICON_GROWTH_TOOLS_WHITE}
                 alt="Growth Tools"
                 className="mobile"
               />}
