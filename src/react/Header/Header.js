@@ -6,6 +6,8 @@ import {GROWTH_TOOLS_DOMAIN, GOOGLE_STORAGE_DOMAIN} from "../../js/constants";
 import FlyoutMenuNav from "../flyout-menus/FlyoutMenuNav/FlyoutMenuNav";
 import MobileMenu from "../MobileMenu/MobileMenu";
 
+import GROWTH_TOOLS_ICON from "../../assets/img/GT-icon@2x.png";
+
 const GROWTH_TOOLS_LOGO_DARK  = `${GOOGLE_STORAGE_DOMAIN}/logo/green-bars.svg`;
 const GROWTH_TOOLS_LOGO_LIGHT = `${GOOGLE_STORAGE_DOMAIN}/logo/blue-bars.svg`;
 
@@ -29,6 +31,7 @@ class Header extends React.Component {
       <header className={headerCSSClassName}>
 
         <a id="growth-tools-link" href={GROWTH_TOOLS_DOMAIN}>
+          <img src={GROWTH_TOOLS_ICON} alt="Growth Tools icon" className="mobile"/>
           <img src={gtLogo} alt="Growth Tools Logo" />
         </a>
 
