@@ -1,15 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {GOOGLE_STORAGE_DOMAIN} from "../../js/constants";
+import {GROWTH_TOOLS_DOMAIN, GOOGLE_STORAGE_DOMAIN} from "../../js/constants";
 import "./styles.scss";
 
 import ToolsFlyout from "../flyout-menus/ToolsFlyout/ToolsFlyout";
 import ResourcesFlyout from "../flyout-menus/ResourcesFlyout/ResourcesFlyout";
 import ClassesFlyout from "../flyout-menus/ClassesFlyout/ClassesFlyout";
 
+// Should move these images assets to Google Storage
+import MENU_ICON from "../../assets/img/hamburger-menu@2x.png";
+import GROWTH_TOOLS_ICON from "../../assets/img/GT-icon@2x.png";
+import CLOSE_ICON_HOVER from "../../assets/img/close-hover@2x.png";
+
 const CLOSE_ICON = `${GOOGLE_STORAGE_DOMAIN}/icons/close.svg`;
-const MENU_ICON_DARK = `${GOOGLE_STORAGE_DOMAIN}/icons/hamburger-menu.svg`;
-const MENU_ICON_LIGHT = `${GOOGLE_STORAGE_DOMAIN}/icons/hamburger-menu-white.svg`;
 
 const GROWTH_TOOLS_LOGO_DARK = `${GOOGLE_STORAGE_DOMAIN}/logo/green-bars.svg`;
 const GROWTH_TOOLS_LOGO_LIGHT = `${GOOGLE_STORAGE_DOMAIN}/logo/blue-bars.svg`;
@@ -216,7 +219,6 @@ class MobileMenu extends React.Component {
     const { menuIsVisible } = this.state;
     const { displayForLightBg } = this.props;
 
-    const hamburgerIcon = displayForLightBg ? MENU_ICON_LIGHT : MENU_ICON_DARK;
     const menuItems = this.getMenuItems();
 
     return (
@@ -227,7 +229,7 @@ class MobileMenu extends React.Component {
           id="growth-tools-menu-btn"
           onClick={this.displayMenu}>
           <img
-            src={hamburgerIcon}
+            src={MENU_ICON}
             alt="Growth Tools Logo"
           />
         </button>
@@ -239,14 +241,13 @@ class MobileMenu extends React.Component {
 
           {/* Menu Header */}
           <div className="menu-header">
-            <button className="btn-toggle" onClick={this.dismissMenu}>
-              <img
-                src={GROWTH_TOOLS_LOGO_DARK}
-                alt="Growth Tools logo"
-              />
-            </button>
+            <a className="growth-tools-link" href={GROWTH_TOOLS_DOMAIN}>
+              <img src={GROWTH_TOOLS_ICON} alt="Growth Tools icon"/>
+            </a>
+
             <button className="btn-dismiss" onClick={this.dismissMenu}>
               <img src={CLOSE_ICON}alt="dismiss icon" />
+              <img src={CLOSE_ICON_HOVER}alt="dismiss icon" className="hover"/>
             </button>
           </div>
 
