@@ -1,6 +1,6 @@
 import React from "react";
-import "../shared-styles.scss";
-import "./styles.scss";
+import sharedStyles from "../shared-styles.scss";
+import styles from "./styles.scss";
 import {GOOGLE_STORAGE_DOMAIN} from "../../../js/constants";
 import CTAButton from "../CTAButton/CTAButton";
 
@@ -43,18 +43,18 @@ const RECENT_BLOG_POSTS = [
  */
 function ResourcesFlyout() {
   return (
-    <div className="resources-flyout">
+    <div className={styles["resources-flyout"]}>
 
       {/* List of most popular resources */}
-      <section className="resources-flyout__primary">
-        <h3 className="resources-flyout__header"> MOST POPULAR RESOURCES </h3>
-        <ul className="resources-flyout__popular">
+      <section className={styles["resources-flyout__primary"]}>
+        <h3 className={styles["resources-flyout__header"]}> MOST POPULAR RESOURCES </h3>
+        <ul className={styles["resources-flyout__popular"]}>
           <li>
             <a
               href="https://dripscripts.growthtools.com/seq/product-launch/"
-              className="resources-flyout__popular-link"
+              className={styles["resources-flyout__popular-link"]}
             >
-              <div className="image-wrapper">
+              <div className={styles["image-wrapper"]}>
                 <img
                   src={IMG_EMAIL_SEQUENCE}
                   alt="email sequence image"
@@ -68,9 +68,9 @@ function ResourcesFlyout() {
           <li>
             <a
               href="https://attract.growthtools.com/"
-              className="resources-flyout__popular-link"
+              className={styles["resources-flyout__popular-link"]}
             >
-              <div className="image-wrapper">
+              <div className={styles["image-wrapper"]}>
                 <img
                   src={IMG_LEAD_MAGNET}
                   alt="lead magnets image"
@@ -84,9 +84,9 @@ function ResourcesFlyout() {
           <li>
             <a
               href="https://videofruit.com/blog/high-ticket-sales/"
-              className="resources-flyout__popular-link"
+              className={styles["resources-flyout__popular-link"]}
             >
-              <div className="image-wrapper">
+              <div className={styles["image-wrapper"]}>
                 <img
                   src={IMG_FUNNEL}
                   alt="funnel image"
@@ -101,18 +101,18 @@ function ResourcesFlyout() {
       </section>
 
       {/* Links to other recent blog posts */}
-      <section className="resources-flyout__secondary">
-        <h3 className="resources-flyout__header">MORE RESOURCES (FROM THE BLOG)</h3>
-        <ol className="recent-posts-list--left">
+      <section className={styles["resources-flyout__secondary"]}>
+        <h3 className={styles["resources-flyout__header"]}>MORE RESOURCES (FROM THE BLOG)</h3>
+        <ol className={styles["recent-posts-list--left"]}>
           {RECENT_BLOG_POSTS.slice(0, 3).map(recentBlogPostListItem)}
         </ol>
-        <ol className="recent-posts-list--right">
+        <ol className="styles__recent-posts-list--right">
           {RECENT_BLOG_POSTS.slice(3).map(recentBlogPostListItem)}
         </ol>
       </section>
 
       {/* CTA button to replace secondary section on mobile layouts */}
-      <div className="tools-flyout__cta-btn">
+      <div className={sharedStyles["tools-flyout__cta-btn"]}>
         <CTAButton
           label="Show all resources"
           href="https://blog.growthtools.com"
@@ -123,7 +123,7 @@ function ResourcesFlyout() {
       <img
         src={IMG_FLYOUT_ANCHOR}
         alt="flyout anchor"
-        className="flyout-menu-anchor--mobile"
+        className={sharedStyles["flyout-menu-anchor--mobile"]}
       />
     </div>
   );
@@ -135,8 +135,8 @@ function ResourcesFlyout() {
  */
 function recentBlogPostListItem(blogPost) {
   return (
-    <li className="recent-posts-list-item" key={blogPost.name}>
-      <a href={blogPost.pageUrl} className="recent-posts-list-item__link">
+    <li className={styles["recent-posts-list-item"]} key={blogPost.name}>
+      <a href={blogPost.pageUrl} className={styles["recent-posts-list-item__link"]}>
         {blogPost.name}
       </a>
     </li>
