@@ -1,16 +1,16 @@
 @import "../../../scss/abstracts/variables";
 
-#mobile-menu .flyout-cta-btn {
+.flyout-cta-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 72px;
-  border-top: 1px solid #cfd8dc;
-	color: $green;
-	font-family: "Brandon Text";
-	font-size: 20px;
-	font-weight: bold;
-	line-height: 24px;
+  border-top: 1px solid #cfd8dc !important;
+	color: $green !important;
+	font-family: "Brandon Text" !important;
+	font-size: 20px !important;
+	font-weight: bold !important;
+	line-height: 24px !important;
 
   img {
     width: 24px;

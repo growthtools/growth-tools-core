@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {GOOGLE_STORAGE_DOMAIN} from "../../../js/constants";
-import "./styles.scss";
+import styles from "./styles.scss";
 
 const MENU_ICON = `${GOOGLE_STORAGE_DOMAIN}/icons/menu-green.svg`;
 
@@ -13,7 +13,7 @@ const CTAButton = ({
   label,
   href
 }) => (
-  <a className="flyout-cta-btn" href={href}>
+  <a className={styles["flyout-cta-btn"]} href={href}>
     <img src={MENU_ICON}alt="list icon"/>
     {label}
   </a>
