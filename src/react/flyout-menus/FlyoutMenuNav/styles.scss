@@ -1,7 +1,11 @@
 @import "../../../scss/abstracts/variables";
+@import "../../../scss/abstracts/mixins";
 
 #flyout-menu-container {
   font-family: "Brandon Text", sans-serif;
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 2;
 
   /*
    * Flyout Menus
@@ -129,8 +133,8 @@
      * primary and secondary content and fade it in after a
      * short delay.
      */
-    & [class$="flyout__primary"] > *,
-    & [class$="flyout__secondary"] > * {
+    & [class*="flyout__primary"] > *,
+    & [class*="flyout__secondary"] > * {
       opacity: 0;
       animation-name: fadeIn;
       animation-duration: 0.2s;
@@ -183,6 +187,12 @@
   @keyframes shiftLeftResources {
     from { transform: scaleY((1/1.14)) translateX(5px); }
     to   { transform: none; }
+  }
+
+  @include for-lg-down {
+    .menu-item {
+      display: none;
+    }
   }
 }
 
