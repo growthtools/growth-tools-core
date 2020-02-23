@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {GROWTH_TOOLS_DOMAIN, GOOGLE_STORAGE_DOMAIN} from "../../js/constants";
-import "./styles.scss";
+import styles from "./styles.scss";
 
 import ToolsFlyout from "../flyout-menus/ToolsFlyout/ToolsFlyout";
 import ResourcesFlyout from "../flyout-menus/ResourcesFlyout/ResourcesFlyout";
@@ -107,10 +107,10 @@ class MobileMenu extends React.Component {
    * @returns {string} The proper CSS class for the given menu item.
    */
   getCSSClassForMenuItem(menuItem) {
-    let cssClass = "flyout-list-item";
+    let cssClass = styles["flyout-list-item"];
 
     if (menuItem === this.state.activeMenuItem) {
-      return `${cssClass} flyout-list-item--active`;
+      return `${cssClass} ${styles["flyout-list-item--active"]}`;
     }
     return cssClass;
   }
@@ -145,7 +145,7 @@ class MobileMenu extends React.Component {
           onClick={() => this.handleMenuItemBtnClick(MENU_ITEM.Classes)}>
           CLASSES
         </button>
-        <div className="flyout-list-item__flyout">
+        <div className={styles["flyout-list-item__flyout"]}>
           <ClassesFlyout currentAccelerator={currentAccelerator}/>
         </div>
       </React.Fragment>
@@ -165,7 +165,7 @@ class MobileMenu extends React.Component {
               onClick={() => this.handleMenuItemBtnClick(MENU_ITEM.Tools)}>
               TOOLS
             </button>
-            <div className="flyout-list-item__flyout">
+            <div className={styles["flyout-list-item__flyout"]}>
               <ToolsFlyout />
             </div>
           </li>
@@ -174,7 +174,7 @@ class MobileMenu extends React.Component {
               onClick={() => this.handleMenuItemBtnClick(MENU_ITEM.Resources)}>
               RESOURCES
             </button>
-            <div className="flyout-list-item__flyout">
+            <div className={styles["flyout-list-item__flyout"]}>
               <ResourcesFlyout />
             </div>
           </li>
@@ -187,7 +187,7 @@ class MobileMenu extends React.Component {
           <li> <a href="/signin"> SIGN IN </a> </li>
         </ul>
         <button
-          className="btn btn-primary btn-create-account"
+          className={[styles["btn btn-primary"], styles["btn-create-account"]].join(' ')}
           style={{ padding: "5px" }}
         >
           Create Account
@@ -207,9 +207,9 @@ class MobileMenu extends React.Component {
           <li> <a href="/my-tools"> YOUR TOOLS </a> </li>
           <li> <a href="/my-training"> YOUR TRAINING </a> </li>
         </ul>
-        <ul className="user-account-links">
-          <li> <a href="/profile" className="link-user"> {userEmail} </a>  </li>
-          <li> <a href="/signout" className="link-logout"> SIGN OUT </a>  </li>
+        <ul className={styles["user-account-links"]}>
+          <li> <a href="/profile" className={styles["link-user"]}> {userEmail} </a>  </li>
+          <li> <a href="/signout" className={styles["link-logout"]}> SIGN OUT </a>  </li>
         </ul>
       </React.Fragment>
     );
@@ -222,11 +222,11 @@ class MobileMenu extends React.Component {
     const menuItems = this.getMenuItems();
 
     return (
-      <div id="mobile-menu-wrapper">
+      <div id={styles["mobile-menu-wrapper"]}>
 
         {/* mobile menu hamburger button */}
         <button
-          id="growth-tools-menu-btn"
+          id={styles["growth-tools-menu-btn"]}
           onClick={this.displayMenu}>
           <img
             src={MENU_ICON}
@@ -235,33 +235,33 @@ class MobileMenu extends React.Component {
         </button>
 
         {/* MOBILE MENU */}
-        <div id="mobile-menu"
-          className={menuIsVisible ? "visible" : ""}
+        <div id={styles["mobile-menu"]}
+          className={menuIsVisible ? styles["visible"] : ""}
           style={{ display: "block" }}>
 
           {/* Menu Header */}
-          <div className="menu-header">
-            <a className="growth-tools-link" href={GROWTH_TOOLS_DOMAIN}>
+          <div className={styles["menu-header"]}>
+            <a className={styles["growth-tools-link"]} href={GROWTH_TOOLS_DOMAIN}>
               <img src={GROWTH_TOOLS_ICON} alt="Growth Tools icon"/>
             </a>
 
-            <button className="btn-dismiss" onClick={this.dismissMenu}>
+            <button className={styles["btn-dismiss"]} onClick={this.dismissMenu}>
               <img src={CLOSE_ICON}alt="dismiss icon" />
-              <img src={CLOSE_ICON_HOVER}alt="dismiss icon" className="hover"/>
+              <img src={CLOSE_ICON_HOVER}alt="dismiss icon" className={styles["hover"]}/>
             </button>
           </div>
 
           {/* Menu Body */}
-          <div className="menu-body" ref={this.menuBodyRef}>
+          <div className={styles["menu-body"]} ref={this.menuBodyRef}>
             {menuItems}
 
             {/* Menu Footer */}
-            <div className="menu-footer">
+            <div className={styles["menu-footer"]}>
               <img
                 src={GROWTH_TOOLS_LOGO_DARK}
                 alt="Growth Tools logo"
               />
-              <div className="copyright-privacy-terms">
+              <div className={styles["copyright-privacy-terms"]}>
                 © {new Date().getFullYear()} Growth Tools · <a>Privacy & Terms</a>
               </div>
             </div>
