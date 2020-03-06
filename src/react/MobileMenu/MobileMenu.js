@@ -7,7 +7,6 @@ import ToolsFlyout from "../flyout-menus/ToolsFlyout/ToolsFlyout";
 import ResourcesFlyout from "../flyout-menus/ResourcesFlyout/ResourcesFlyout";
 import ClassesFlyout from "../flyout-menus/ClassesFlyout/ClassesFlyout";
 
-// Should move these images assets to Google Storage
 const MENU_ICON = `${GOOGLE_STORAGE_DOMAIN}/hamburger-menu@2x.png`;
 const GROWTH_TOOLS_ICON = `${GOOGLE_STORAGE_DOMAIN}/GT-icon@2x.png`;
 const CLOSE_ICON_HOVER = `${GOOGLE_STORAGE_DOMAIN}/close-hover@2x.png`;
