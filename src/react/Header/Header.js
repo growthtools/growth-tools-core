@@ -1,16 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "./styles.scss";
-import {GROWTH_TOOLS_DOMAIN, GOOGLE_STORAGE_DOMAIN} from "../../js/constants";
+import { GROWTH_TOOLS_DOMAIN, GOOGLE_STORAGE_DOMAIN } from "../../js/constants";
 
 import FlyoutMenuNav from "../flyout-menus/FlyoutMenuNav/FlyoutMenuNav";
 import MobileMenu from "../MobileMenu/MobileMenu";
 
-import GROWTH_TOOLS_ICON from "../../assets/img/GT-icon@2x.png";
-
-const GROWTH_TOOLS_LOGO_DARK  = `${GOOGLE_STORAGE_DOMAIN}/logo/green-bars.svg`;
+const GROWTH_TOOLS_LOGO_DARK = `${GOOGLE_STORAGE_DOMAIN}/logo/green-bars.svg`;
 const GROWTH_TOOLS_LOGO_LIGHT = `${GOOGLE_STORAGE_DOMAIN}/logo/blue-bars.svg`;
-
+const GROWTH_TOOLS_ICON = `${GOOGLE_STORAGE_DOMAIN}/GT-icon@2x.png`;
 
 /**
  * Page header. Displays link to Growth Tools home page and
@@ -31,7 +29,11 @@ class Header extends React.Component {
       <header className={headerCSSClassName}>
 
         <a id={styles["growth-tools-link"]} href={GROWTH_TOOLS_DOMAIN}>
-          <img src={GROWTH_TOOLS_ICON} alt="Growth Tools icon" className={styles["mobile"]}/>
+          <img
+            src={GROWTH_TOOLS_ICON}
+            alt="Growth Tools icon"
+            className={styles["mobile"]}
+          />
           <img src={gtLogo} alt="Growth Tools Logo" />
         </a>
 

@@ -4,8 +4,6 @@ import styles from "./styles.scss";
 
 import { GROWTH_TOOLS_DOMAIN, GOOGLE_STORAGE_DOMAIN } from "../../js/constants";
 
-import ICON_GROWTH_TOOLS_WHITE from "../../assets/img/GT-icon@2x.png";
-
 //
 // Icons
 //
@@ -13,6 +11,7 @@ const ICON_FACEBOOK = `${GOOGLE_STORAGE_DOMAIN}/icons/social/facebook-grey.svg`;
 const ICON_FACEBOOK_DARK = `${GOOGLE_STORAGE_DOMAIN}/icons/social/facebook-blue@2x.png`;
 
 const ICON_GROWTH_TOOLS = `${GOOGLE_STORAGE_DOMAIN}/icons/gt-bars-green@2x.png`;
+const ICON_GROWTH_TOOLS_WHITE = `${GOOGLE_STORAGE_DOMAIN}/GT-icon@2x.png`;
 
 //
 // Text Links
@@ -88,7 +87,10 @@ function Footer(props) {
 
       {/* Social Links */}
       <div className={styles["social-links"]}>
-        <a href="https://facebook.com/growthtool" className={styles["link-secondary"]}>
+        <a
+          href="https://facebook.com/growthtool"
+          className={styles["link-secondary"]}
+        >
           <img src={iconFacebook} alt="Facebook icon" />
         </a>
         {/*
@@ -121,7 +123,11 @@ function Footer(props) {
               Resources
             </a>
           </h4>
-          <ul className={[styles["nav-list"], styles["nav-list--resources"]].join(' ')}>
+          <ul
+            className={[styles["nav-list"], styles["nav-list--resources"]].join(
+              " "
+            )}
+          >
             {LINKS_RESOURCES.map(getListItemLink)}
           </ul>
         </section>
@@ -133,7 +139,11 @@ function Footer(props) {
               Classes
             </a>
           </h4>
-          <ul className={[styles["nav-list"], styles["nav-list--training"]].join(' ')}>
+          <ul
+            className={[styles["nav-list"], styles["nav-list--training"]].join(
+              " "
+            )}
+          >
             {LINKS_TRAINING.map(getListItemLink)}
           </ul>
         </section>
@@ -221,7 +231,10 @@ function Footer(props) {
         </div>
         <div className={styles["copyright"]}>
           © {new Date().getFullYear()} <span>Growth Tools</span> •
-          <a href="https://my.growthtools.com/terms" className={styles["link-secondary"]}>
+          <a
+            href="https://my.growthtools.com/terms"
+            className={styles["link-secondary"]}
+          >
             Privacy & Terms
           </a>
         </div>
