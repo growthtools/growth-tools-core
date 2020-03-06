@@ -14,6 +14,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(png|jpg)$/,
+        loader: "url-loader",
+      },
+      {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: "babel-loader"
@@ -26,6 +30,10 @@ module.exports = {
             loader: "css-loader",
             options: {
               sourceMap: true,
+              importLoaders: 1,
+              modules: {
+                localIdentName: "[name]__[local]__[hash:base64:5]"
+              }
             }
           },
           {

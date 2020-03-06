@@ -25,7 +25,7 @@
   /*
    * Hide the secondary section on mobile layouts
    */
-  [class$="flyout__secondary"] {
+  [class*="flyout__secondary"] {
     display: none;
   }
 

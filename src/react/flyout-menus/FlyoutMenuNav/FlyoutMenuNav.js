@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./styles.scss";
+import styles from "./styles.scss";
 
 import ToolsFlyout from "../ToolsFlyout/ToolsFlyout";
 import ClassesFlyout from "../ClassesFlyout/ClassesFlyout";
@@ -83,10 +83,10 @@ class FlyoutMenuNav extends React.Component {
       activeMenuItem === "Tools" &&
       previousActiveMenuItem.match(/Classes|Resources/);
 
-    return (
-      "flyout-menu flyout-menu--tools" +
-      (userNavigatingLeft ? " a-slide-left" : "")
-    );
+    return `
+      ${styles["flyout-menu"]}
+      ${styles["flyout-menu--tools"]}
+      ${(userNavigatingLeft ? styles["a-slide-left"] : "")}`;
   }
 
   /**
@@ -96,14 +96,14 @@ class FlyoutMenuNav extends React.Component {
   cssClassForClassesMenu() {
     const { activeMenuItem, previousActiveMenuItem } = this.state;
 
-    let cssClass = "flyout-menu flyout-menu--classes";
+    let cssClass = `${styles["flyout-menu"]} ${styles["flyout-menu--classes"]}`;
     if (activeMenuItem !== "Classes") {
       return cssClass;
     }
 
     const userNavigatingRight = previousActiveMenuItem.match(/Tools|Resources/);
 
-    return cssClass + (userNavigatingRight ? " a-slide-right" : "");
+    return cssClass + (userNavigatingRight ? ` ${styles["a-slide-right"]}` : "");
   }
 
   /**
@@ -112,7 +112,7 @@ class FlyoutMenuNav extends React.Component {
    */
   cssClassForResourcesMenu() {
     const { activeMenuItem, previousActiveMenuItem } = this.state;
-    let cssClass = "flyout-menu flyout-menu--resources";
+    let cssClass = `${styles["flyout-menu"]} ${styles["flyout-menu--resources"]}`;
     if (activeMenuItem !== "Resources") {
       return cssClass;
     }
@@ -122,8 +122,8 @@ class FlyoutMenuNav extends React.Component {
 
     return (
       cssClass +
-      (userNavigatingLeft ? " a-slide-left" : "") +
-      (userNavigatingRight ? " a-slide-right" : "")
+      (userNavigatingLeft ? ` ${styles["a-slide-left"]}` : "") +
+      (userNavigatingRight ? ` ${styles["a-slide-right"]}` : "")
     );
   }
 
@@ -135,11 +135,11 @@ class FlyoutMenuNav extends React.Component {
     } = this.state;
 
     const bgColorCSSClass = this.props.displayForLightBg
-      ? "bg--light"
-      : "bg--dark";
+      ? styles["bg--light"]
+      : styles["bg--dark"];
 
     const flyoutMenuAnchorBoxClassName =
-      "flyout-menu-anchor-box" + (activeMenuItem === "Classes" ? " blue" : "");
+      styles["flyout-menu-anchor-box"] + (activeMenuItem === "Classes" ? ` ${styles["blue"]}` : "");
 
     // Flyout menu class names
     const toolsMenuCSSClass = this.cssClassForToolsMenu();
@@ -149,17 +149,17 @@ class FlyoutMenuNav extends React.Component {
     const { currentAccelerator } = this.props;
 
     return (
-      <div id="flyout-menu-container" className={bgColorCSSClass}>
+      <div id={styles["flyout-menu-container"]} className={bgColorCSSClass}>
 
         <nav>
           <ul
-            className="menu-item-list"
+            className={styles["menu-item-list"]}
             onMouseLeave={e => this.handleNavigationMenuMouseLeave()}
           >
 
             {/* Tools */}
             <li
-              className="menu-item menu-item--tools"
+              className={`${styles["menu-item"]} ${styles["menu-item--tools"]}`}
               onMouseLeave={e => this.handleMenuItemMouseLeave("Tools")}
               onMouseEnter={e => this.handleMenuItemMouseEnter("Tools")}
             >
@@ -171,7 +171,7 @@ class FlyoutMenuNav extends React.Component {
 
             {/* Resources */}
             <li
-              className="menu-item menu-item--resources"
+              className={`${styles["menu-item"]} ${styles["menu-item--resources"]}`}
               onMouseLeave={e => this.handleMenuItemMouseLeave("Resources")}
               onMouseEnter={e => this.handleMenuItemMouseEnter("Resources")}
             >
@@ -183,7 +183,7 @@ class FlyoutMenuNav extends React.Component {
 
             {/* Classes */}
             <li
-              className="menu-item menu-item--classes"
+              className={`${styles["menu-item"]} ${styles["menu-item--classes"]}`}
               onMouseLeave={e => this.handleMenuItemMouseLeave("Classes")}
               onMouseEnter={e => this.handleMenuItemMouseEnter("Classes")}
             >
@@ -198,12 +198,12 @@ class FlyoutMenuNav extends React.Component {
               <img
                 src={FLYOUT_ANCHOR}
                 alt="flyout anchor"
-                className="flyout-menu-anchor"
+                className={styles["flyout-menu-anchor"]}
               />
               <img
                 src={FLYOUT_ANCHOR_BLUE}
                 alt="flyout anchor"
-                className="flyout-menu-anchor flyout-menu-anchor--blue"
+                className={[styles["flyout-menu-anchor"], styles["flyout-menu-anchor--blue"]].join(' ')}
               />
             </li>
           </ul>

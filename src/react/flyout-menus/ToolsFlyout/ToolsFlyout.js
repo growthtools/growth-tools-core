@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "../shared-styles.scss";
-import "./styles.scss";
+import sharedStyles from "../shared-styles.scss";
+import styles from "./styles.scss";
 import {GOOGLE_STORAGE_DOMAIN} from "../../../js/constants";
 import CTAButton from "../CTAButton/CTAButton";
 
@@ -79,20 +79,20 @@ const OTHER_TOOLS = {
  */
 function ToolsFlyout(props) {
   return (
-    <div className="tools-flyout">
+    <div className={styles["tools-flyout"]}>
 
       {/* Most Popular Tools */}
-      <section className="tools-flyout__primary">
-        <h3 className="tools-flyout__header"> MOST POPULAR TOOLS </h3>
-        <ul className="tools-flyout__popular-list">
+      <section className={styles["tools-flyout__primary"]}>
+        <h3 className={styles["tools-flyout__header"]}> MOST POPULAR TOOLS </h3>
+        <ul className={styles["tools-flyout__popular-list"]}>
           {["DripScripts", "Attract", "GoViral"].map(popularToolListItem)}
         </ul>
       </section>
 
       {/* Other Tools */}
-      <section className="tools-flyout__secondary">
-        <h3 className="tools-flyout__header">OTHER TOOLS</h3>
-        <ul className="tools-flyout__other-list">
+      <section className={styles["tools-flyout__secondary"]}>
+        <h3 className={styles["tools-flyout__header"]}>OTHER TOOLS</h3>
+        <ul className={styles["tools-flyout__other-list"]}>
           {[
             "ListGoal",
             "OneClick",
@@ -105,7 +105,7 @@ function ToolsFlyout(props) {
       </section>
 
       {/* CTA button to replace secondary section on mobile layouts */}
-      <div className="tools-flyout__cta-btn">
+      <div className={sharedStyles["tools-flyout__cta-btn"]}>
         <CTAButton
           label="Show all tools"
           href="/tools"
@@ -116,7 +116,7 @@ function ToolsFlyout(props) {
       <img
         src={FLYOUT_ANCHOR}
         alt="flyout anchor"
-        className="flyout-menu-anchor--mobile"
+        className={sharedStyles["flyout-menu-anchor--mobile"]}
       />
     </div>
   );
@@ -129,20 +129,20 @@ function ToolsFlyout(props) {
 function popularToolListItem(toolName) {
   const tool = POPULAR_TOOLS[toolName];
   return (
-    <li className="tools-flyout__popular-list-item" key={toolName}>
+    <li className={styles["tools-flyout__popular-list-item"]} key={toolName}>
       <a
         href={tool.toolUrl}
         target="_blank"
-        className="tools-flyout__popular-list-item-link"
+        className={styles["tools-flyout__popular-list-item-link"]}
       >
         <div style={{ position: "relative", display: "flex" }}>
           <img
-            className="popular-tool-logo"
+            className={styles["popular-tool-logo"]}
             src={tool.logoSrc}
             alt={`${toolName} logo`}
           />
         </div>
-        <p className="tools-flyout__tool-description">
+        <p className={styles["tools-flyout__tool-description"]}>
           {tool.description}
         </p>
       </a>
@@ -157,11 +157,11 @@ function popularToolListItem(toolName) {
 function otherToolListItem(toolName) {
   const tool = OTHER_TOOLS[toolName];
   return (
-    <li className="tools-flyout__other-list-item" key={toolName}>
+    <li className={styles["tools-flyout__other-list-item"]} key={toolName}>
       <a
         href={tool.toolUrl}
         target="_blank"
-        className={`tools-flyout__other-list-item-link ${toolName}`}
+        className={`${styles["tools-flyout__other-list-item-link"]} ${styles[toolName]}`}
       >
         <img
           style={{ width: tool.logoWidth }}

@@ -10,12 +10,21 @@
        */
       transform: translateY(2px);
   }
-}
 
-#flyout-menu-container {
-  display: flex;
-  justify-content: flex-end;
-  flex-grow: 2;
+  img.mobile {
+    display: none;
+  }
+
+  @include for-sm-down {
+    img {
+      display: none;
+    }
+
+    img.mobile {
+      display: inline-block;
+      width: 32px;
+    }
+  }
 }
 
 #growth-tools-menu-btn {

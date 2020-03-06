@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "../shared-styles.scss";
-import "./styles.scss";
+import sharedStyles from "../shared-styles.scss";
+import styles from "./styles.scss";
 import CTAButton from "../CTAButton/CTAButton";
 import {
   GROWTH_TOOLS_DOMAIN,
@@ -68,37 +68,37 @@ function ClassesFlyout(props) {
   } = props.currentAccelerator;
 
   return (
-    <div className="classes-flyout">
+    <div className={styles["classes-flyout"]}>
 
       {/* Primary (light blue) section
         *
         * Accelerator open for enrollment
         *
         */}
-      <section className="classes-flyout__primary">
-        <h3 className="classes-flyout__header">
+      <section className={styles["classes-flyout__primary"]}>
+        <h3 className={styles["classes-flyout__header"]}>
           ENROLLING
           {" "}
           {enrollment_is_open ? "NOW" : "SOON"}
         </h3>
-        <div className="current-accelerator">
+        <div className={styles["current-accelerator"]}>
           <img
-            className="current-accelerator__icon"
+            className={styles["current-accelerator__icon"]}
             src={whiteIconSrcForAcceleratorType(accelerator_type)}
             alt="accelerator icon"
           />
-          <section className="current-accelerator__main">
-            <h4 className="current-accelerator__type">
+          <section className={styles["current-accelerator__main"]}>
+            <h4 className={styles["current-accelerator__type"]}>
               {`${accelerator_type} ACCELERATOR`.toUpperCase()}
             </h4>
-            <p className="current-accelerator__name">
+            <p className={styles["current-accelerator__name"]}>
               {goal}
             </p>
           </section>
-          <p className="current-accelerator__seats-remaining">
+          <p className={styles["current-accelerator__seats-remaining"]}>
             {`${num_seats_remaining} seat${num_seats_remaining === 1 ? "" : "s"} ${enrollment_is_open ? "remaining" : "will be available"}`}
           </p>
-          <a className="current-accelerator__link" href={sales_page_url}>
+          <a className={styles["current-accelerator__link"]} href={sales_page_url}>
             <span> Learn more </span>
           </a>
         </div>
@@ -108,11 +108,11 @@ function ClassesFlyout(props) {
         * 
         * List of links to other accelerators
         */}
-      <section className="classes-flyout__secondary">
-        <h3 className="classes-flyout__header">
+      <section className={styles["classes-flyout__secondary"]}>
+        <h3 className={styles["classes-flyout__header"]}>
           UPCOMING 4-WEEK CLASSES
         </h3>
-        <ul className="accelerator-list">
+        <ul className={styles["accelerator-list"]}>
           {[
             "Hiring",
             "Launch",
@@ -125,7 +125,7 @@ function ClassesFlyout(props) {
       </section>
 
       {/* CTA button to replace secondary section on mobile layouts */}
-      <div className="tools-flyout__cta-btn">
+      <div className={sharedStyles["tools-flyout__cta-btn"]}>
         <CTAButton label="Show all marketing classes" href="/training" />
       </div>
 
@@ -133,7 +133,7 @@ function ClassesFlyout(props) {
       <img
         src={FLYOUT_ANCHOR}
         alt="flyout anchor"
-        className="flyout-menu-anchor--mobile"
+        className={sharedStyles["flyout-menu-anchor--mobile"]}
       />
     </div>
   );
@@ -146,8 +146,8 @@ function ClassesFlyout(props) {
 function acceleratorListItem(acceleratorName) {
   const accelerator = ACCELERATORS[acceleratorName];
   return (
-    <li className="accelerator-list-item" key={acceleratorName}>
-      <a href={accelerator.pageUrl} className="accelerator-list-item__link">
+    <li className={styles["accelerator-list-item"]} key={acceleratorName}>
+      <a href={accelerator.pageUrl} className={styles["accelerator-list-item__link"]}>
         <img src={accelerator.logoSrc} alt={`${acceleratorName} logo`} />
       </a>
     </li>

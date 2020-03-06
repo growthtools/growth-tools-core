@@ -1,10 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./styles.scss";
+import styles from "./styles.scss";
 import {GROWTH_TOOLS_DOMAIN, GOOGLE_STORAGE_DOMAIN} from "../../js/constants";
 
 import FlyoutMenuNav from "../flyout-menus/FlyoutMenuNav/FlyoutMenuNav";
 import MobileMenu from "../MobileMenu/MobileMenu";
+
+import GROWTH_TOOLS_ICON from "../../assets/img/GT-icon@2x.png";
 
 const GROWTH_TOOLS_LOGO_DARK  = `${GOOGLE_STORAGE_DOMAIN}/logo/green-bars.svg`;
 const GROWTH_TOOLS_LOGO_LIGHT = `${GOOGLE_STORAGE_DOMAIN}/logo/blue-bars.svg`;
@@ -21,14 +23,15 @@ class Header extends React.Component {
 
     let headerCSSClassName = "", gtLogo = GROWTH_TOOLS_LOGO_DARK;
     if (lightsAreOn) {
-      headerCSSClassName = "lights-on";
+      headerCSSClassName = styles["lights-on"];
       gtLogo = GROWTH_TOOLS_LOGO_LIGHT;
     }
 
     return (
       <header className={headerCSSClassName}>
 
-        <a id="growth-tools-link" href={GROWTH_TOOLS_DOMAIN}>
+        <a id={styles["growth-tools-link"]} href={GROWTH_TOOLS_DOMAIN}>
+          <img src={GROWTH_TOOLS_ICON} alt="Growth Tools icon" className={styles["mobile"]}/>
           <img src={gtLogo} alt="Growth Tools Logo" />
         </a>
 
@@ -38,7 +41,7 @@ class Header extends React.Component {
         />
 
         <a
-          id="coaching-link"
+          id={styles["coaching-link"]}
           href="https://lp.growthtools.com/apply-course?utm_source=GT-Website-Nav"
           target="_blank"
         >

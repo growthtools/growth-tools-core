@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./styles.scss";
+import styles from "./styles.scss";
 
 import { GROWTH_TOOLS_DOMAIN, GOOGLE_STORAGE_DOMAIN } from "../../js/constants";
+
+import ICON_GROWTH_TOOLS_WHITE from "../../assets/img/GT-icon@2x.png";
 
 //
 // Icons
@@ -11,8 +13,6 @@ const ICON_FACEBOOK = `${GOOGLE_STORAGE_DOMAIN}/icons/social/facebook-grey.svg`;
 const ICON_FACEBOOK_DARK = `${GOOGLE_STORAGE_DOMAIN}/icons/social/facebook-blue@2x.png`;
 
 const ICON_GROWTH_TOOLS = `${GOOGLE_STORAGE_DOMAIN}/icons/gt-bars-green@2x.png`;
-const ICON_GROWTH_TOOLS_MOBILE = `${GOOGLE_STORAGE_DOMAIN}/logo/green-bars.svg`;
-const ICON_GROWTH_TOOLS_MOBILE_LIGHTS_ON = `${GOOGLE_STORAGE_DOMAIN}/logo/green-bars-blue-text.png`;
 
 //
 // Text Links
@@ -76,7 +76,7 @@ function Footer(props) {
 
   // Set the CSS styles and icons according to "lights on" state:
   if (lightsAreOn) {
-    footerCSSClassName = "lights-on";
+    footerCSSClassName = styles["lights-on"];
     iconFacebook = ICON_FACEBOOK;
   } else {
     footerCSSClassName = "";
@@ -87,8 +87,8 @@ function Footer(props) {
     <footer className={footerCSSClassName}>
 
       {/* Social Links */}
-      <div className="social-links">
-        <a href="https://facebook.com/growthtool" className="link-secondary">
+      <div className={styles["social-links"]}>
+        <a href="https://facebook.com/growthtool" className={styles["link-secondary"]}>
           <img src={iconFacebook} alt="Facebook icon" />
         </a>
         {/*
@@ -101,55 +101,55 @@ function Footer(props) {
         */}
       </div>
 
-      <div className="menu-section">
+      <div className={styles["menu-section"]}>
         {/* FREE TOOLS SECTION */}
-        <section className="menu-group">
+        <section className={styles["menu-group"]}>
           <h4>
             <a href={`${GROWTH_TOOLS_DOMAIN}/tools`}>
               TOOLS
             </a>
           </h4>
-          <ul className="nav-list">
+          <ul className={styles["nav-list"]}>
             {LINKS_FREE_TOOLS.map(getListItemLink)}
           </ul>
         </section>
 
         {/* RESOURCES SECTION */}
-        <section className="menu-group">
+        <section className={styles["menu-group"]}>
           <h4>
             <a href="https://blog.videofruit.com">
               Resources
             </a>
           </h4>
-          <ul className="nav-list nav-list--resources">
+          <ul className={[styles["nav-list"], styles["nav-list--resources"]].join(' ')}>
             {LINKS_RESOURCES.map(getListItemLink)}
           </ul>
         </section>
 
         {/* TRAINING SECTION */}
-        <section className="menu-group">
+        <section className={styles["menu-group"]}>
           <h4>
             <a href={`${GROWTH_TOOLS_DOMAIN}/training`}>
               Classes
             </a>
           </h4>
-          <ul className="nav-list nav-list--training">
+          <ul className={[styles["nav-list"], styles["nav-list--training"]].join(' ')}>
             {LINKS_TRAINING.map(getListItemLink)}
           </ul>
         </section>
 
         {/* COACHING SECTION */}
-        <section className="menu-group">
+        <section className={styles["menu-group"]}>
           <h4>
             <a href="https://growthtools.com/apply">
               Coaching
             </a>
           </h4>
-          <ul className="nav-list">
+          <ul className={styles["nav-list"]}>
             <li>
               <a
                 href="https://growthtools.com/apply"
-                className="link-secondary"
+                className={styles["link-secondary"]}
               >
                 Schedule a consult
               </a>
@@ -159,15 +159,15 @@ function Footer(props) {
 
         {/* User Action Buttons
           * Sign In + Create Account */}
-        <div className="user-actions">
+        <div className={styles["user-actions"]}>
           <a
-            className="user-actions__btn-signin"
+            className={styles["user-actions__btn-signin"]}
             href={`${GROWTH_TOOLS_DOMAIN}/signin`}
           >
-            SIGN IN
+            Sign in
           </a>
           <a
-            className="user-actions__btn-create-account"
+            className={styles["user-actions__btn-create-account"]}
             href={`${GROWTH_TOOLS_DOMAIN}/register`}
           >
             Create Account
@@ -200,28 +200,28 @@ function Footer(props) {
           */}
       </div>
 
-      <div className="lower">
-        <div className="logo">
+      <div className={styles["lower"]}>
+        <div className={styles["logo"]}>
           <img
             src={ICON_GROWTH_TOOLS}
             alt="Growth Tools bars"
-            className="not-mobile"
+            className={styles["not-mobile"]}
           />
           {lightsAreOn
             ? <img
-                src={ICON_GROWTH_TOOLS_MOBILE_LIGHTS_ON}
+                src={ICON_GROWTH_TOOLS}
                 alt="Growth Tools"
-                className="mobile"
+                className={styles["mobile"]}
               />
             : <img
-                src={ICON_GROWTH_TOOLS_MOBILE}
+                src={ICON_GROWTH_TOOLS_WHITE}
                 alt="Growth Tools"
-                className="mobile"
+                className={styles["mobile"]}
               />}
         </div>
-        <div className="copyright">
+        <div className={styles["copyright"]}>
           © {new Date().getFullYear()} <span>Growth Tools</span> •
-          <a href="https://my.growthtools.com/terms" className="link-secondary">
+          <a href="https://my.growthtools.com/terms" className={styles["link-secondary"]}>
             Privacy & Terms
           </a>
         </div>
