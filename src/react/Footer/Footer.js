@@ -21,7 +21,7 @@ const LINKS_FREE_TOOLS = [
   { name: "Welcome.ly", href: "https://welcome.ly" },
   { name: "Go Viral", href: "https://wanttogoviral.com" },
   { name: "ListGoal", href: "https://listgoal.com" },
-  { name: "Remind", href: "https://remindthem.com" },
+  { name: "Remind", href: "https://www.remindthem.com" },
   { name: "One Click", href: "https://getoneclick.com" },
   { name: "Don't Hit Publish", href: "https://donthitpublish.com" },
   { name: "DripScripts", href: "https://dripscripts.com" },
