@@ -164,6 +164,14 @@ function Footer(props) {
                 Schedule a consult
               </a>
             </li>
+            <li>
+              <a
+                href={`${GROWTH_TOOLS_DOMAIN}/goal`}
+                className={styles["link-secondary"]}
+              >
+                $100M Client Growth Counter
+              </a>
+            </li>
           </ul>
         </section>
 
