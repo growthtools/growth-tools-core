@@ -199,7 +199,7 @@ function Footer(props) {
               <a href="/blog">
                   BLOG
               </a>
-            </h4> 
+            </h4>
             <ul className="nav-list nav-list--blog">
               <li>
                 <a href="#" className="link-secondary"></a>
