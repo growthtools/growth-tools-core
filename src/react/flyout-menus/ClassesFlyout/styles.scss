@@ -11,6 +11,7 @@
 
   &__header {
     font-size: 16px;
+    font-family: "Brandon Text";
     font-weight: 900;
     letter-spacing: 2px;
     line-height: 24px;
@@ -30,6 +31,7 @@
   &__secondary &__header {
     color: $sub-text;
     font-size: 16px;
+    font-family: "Brandon Text";
     font-weight: 900;
     letter-spacing: 2px;
     line-height: 24px;
@@ -57,6 +59,7 @@
 
     &__type {
       font-size: 12px;
+      font-family: "Brandon Text";
       font-weight: bold;
       letter-spacing: 2.4px;
       line-height: 16px;
@@ -71,6 +74,7 @@
 
     &__name {
       margin-top: 4px;
+      font-family: "Brandon Text";
       font-weight: bold;
     }
 
@@ -95,6 +99,7 @@
       transition: 0.2s ease-out;
       color: rgba(black,0.7);
       font-size: 14px;
+      font-family: "Brandon Text";
       font-weight: bold;
       line-height: 20px;
       display: flex;
