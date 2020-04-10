@@ -4,54 +4,48 @@
  *
  * You can use this stylesheet as-is if your project uses webpack and
  * css-loader for (S)CSS files.
- * 
+ *
  * Alternatively, copy the font files into the proper directory as needed.
- * 
+ *
  */
 
 @font-face {
   font-family: "Brandon Text";
   font-weight: 300;
-  src: url("~@growth-tools/core/dist/fonts/BrandonText-Light.otf");
+  src: url("~@growth-tools/core/dist/fonts/BrandonText-Light.otf") format('opentype');
 }
 
 @font-face {
   font-family: "Brandon Text";
   font-style: normal;
   font-weight: 400;
-  src: url("~@growth-tools/core/dist/fonts/BrandonText-Regular.otf");
+  src: url("~@growth-tools/core/dist/fonts/BrandonText-Regular.otf") format('opentype');
 }
 
 @font-face {
   font-family: "Brandon Text";
   font-style: italic;
   font-weight: normal;
-  src: url("~@growth-tools/core/dist/fonts/BrandonText-RegularItalic.otf");
+  src: url("~@growth-tools/core/dist/fonts/BrandonText-RegularItalic.otf") format('opentype');
 }
 
 @font-face {
   font-family: "Brandon Text";
   font-weight: 500;
-  src: url("~@growth-tools/core/dist/fonts/BrandonText-Medium.otf");
+  src: url("~@growth-tools/core/dist/fonts/BrandonText-Medium.otf") format('opentype');
 }
 
 @font-face {
   font-family: "Brandon Text";
   font-style: bold;
   font-weight: 700;
-  src: url("~@growth-tools/core/dist/fonts/BrandonText-Bold.otf");
+  src: url("~@growth-tools/core/dist/fonts/BrandonText-Bold.otf") format('opentype');
 }
 
 @font-face {
   font-family: "Brandon Text";
   font-weight: 900;
-  src: url("~@growth-tools/core/dist/fonts/BrandonText-Black.otf");
-}
-
-@font-face {
-  font-family: "BrandonText-Black";
-  font-weight: 900;
-  src: url("~@growth-tools/core/dist/fonts/BrandonText-Black.otf");
+  src: url("~@growth-tools/core/dist/fonts/BrandonText-Black.otf") format('opentype');
 }
 
 /* Brandon Grotesque */
@@ -59,5 +53,5 @@
 @font-face {
   font-family: "Brandon Grotesque";
   font-weight: 900;
-  src: url("~@growth-tools/core/dist/fonts/BrandonGrotesque/Brandon_blk.otf");
+  src: url("~@growth-tools/core/dist/fonts/BrandonGrotesque/Brandon_blk.otf") format('opentype');
 }
