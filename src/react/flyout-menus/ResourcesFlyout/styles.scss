@@ -18,7 +18,7 @@ $resource-image-widths-mobile: (
 
   &__header {
     color: $gu-grey;
-    font-family: "BrandonText-Black";
+    font-family: "Brandon Text";
     font-size: 16px;
     font-weight: 900;
     letter-spacing: 2px;
@@ -52,7 +52,7 @@ $resource-image-widths-mobile: (
   }
 
   /*
-   * Add a border radius and drop shadow to the last 
+   * Add a border radius and drop shadow to the last
    * of the popular resources' images
    */
   &__popular li:nth-child(3) .image-wrapper img {
@@ -75,7 +75,7 @@ $resource-image-widths-mobile: (
 
     label {
       color: $gu-grey;
-      font-family: "BrandonText-Black";
+      font-family: "Brandon Text";
       font-size: 14px;
       font-weight: 900;
       letter-spacing: 1.75px;
@@ -130,7 +130,7 @@ $resource-image-widths-mobile: (
         left: 0;
         content: counter(blog-post-counter);
         color: $sub-text;
-        font-family: "BrandonText-Black";
+        font-family: "Brandon Text";
         font-size: 16px;
         font-weight: 900;
         letter-spacing: 2px;
@@ -154,6 +154,7 @@ $resource-image-widths-mobile: (
     .recent-posts-list-item__link {
       color: $black;
       font-size: 16px;
+      font-family: "Brandon Text";
       font-weight: 500;
       line-height: 24px;
       transition: color 0.2s ease-out;
