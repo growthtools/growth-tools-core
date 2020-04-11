@@ -35,7 +35,7 @@
   padding-left: 20px;
 	color: $sub-text;
 	font-size: 14px;
-	font-weight: 900;
+	font-weight: $font-weight-900;
 	letter-spacing: 1.75px;
 	line-height: 20px;
 
@@ -55,7 +55,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-family: "Brandon Text";
+    font-family: $font-family-primary;
 
     /**
      * prevents cord of the light bulb image
@@ -85,7 +85,7 @@ header {
         height: 72px;
         color: $grey;
         font-size: 14px;
-        font-weight: 900;
+        font-weight: $font-weight-900;
         letter-spacing: 1.75px;
         line-height: 20px;
         padding: 0 20px;
@@ -96,7 +96,7 @@ header {
     }
 
     .nav-item:not(:last-of-type) {
-        font-family: "BrandonGrotesque"
+        font-family: $font-family-secondary;
     }
 
     /*
@@ -109,7 +109,7 @@ header {
         width: 128px;
         color: $light-green;
         font-size: 14px;
-        font-weight: 500;
+        font-weight: $font-weight-500;
         line-height: 20px;
         text-align: center;
         border: 2px solid $light-green;

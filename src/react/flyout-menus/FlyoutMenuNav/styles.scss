@@ -2,7 +2,7 @@
 @import "../../../scss/abstracts/mixins";
 
 #flyout-menu-container {
-  font-family: "Brandon Text", sans-serif;
+  font-family: $font-family-primary, sans-serif;
   display: flex;
   justify-content: flex-end;
   flex-grow: 2;
@@ -43,7 +43,7 @@
       height: 72px;
       color: $grey;
       font-size: 14px;
-      font-weight: 900;
+      font-weight: $font-weight-900;
       letter-spacing: 1.75px;
       line-height: 20px;
       padding: 0 20px;
@@ -73,7 +73,7 @@
   }
 
   .flyout-menu-anchor-box {
-    /* prevents anchor from being obscured by a 
+    /* prevents anchor from being obscured by a
      * flyout menu's box shadow */
     z-index: 21;
 
