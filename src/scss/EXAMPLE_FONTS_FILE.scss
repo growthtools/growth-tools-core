@@ -10,40 +10,40 @@
  */
 
 @font-face {
-  font-family: "Brandon Text";
+  font-family: "Brandon Text"; // $font-family-primary
   font-weight: 300;
   src: url("~@growth-tools/core/dist/fonts/BrandonText-Light.otf") format('opentype');
 }
 
 @font-face {
-  font-family: "Brandon Text";
+  font-family: "Brandon Text"; // $font-family-primary
   font-style: normal;
   font-weight: 400;
   src: url("~@growth-tools/core/dist/fonts/BrandonText-Regular.otf") format('opentype');
 }
 
 @font-face {
-  font-family: "Brandon Text";
+  font-family: "Brandon Text"; // $font-family-primary
   font-style: italic;
   font-weight: normal;
   src: url("~@growth-tools/core/dist/fonts/BrandonText-RegularItalic.otf") format('opentype');
 }
 
 @font-face {
-  font-family: "Brandon Text";
+  font-family: "Brandon Text"; // $font-family-primary
   font-weight: 500;
   src: url("~@growth-tools/core/dist/fonts/BrandonText-Medium.otf") format('opentype');
 }
 
 @font-face {
-  font-family: "Brandon Text";
+  font-family: "Brandon Text"; // $font-family-primary
   font-style: bold;
   font-weight: 700;
   src: url("~@growth-tools/core/dist/fonts/BrandonText-Bold.otf") format('opentype');
 }
 
 @font-face {
-  font-family: "Brandon Text";
+  font-family: "Brandon Text"; // $font-family-primary
   font-weight: 900;
   src: url("~@growth-tools/core/dist/fonts/BrandonText-Black.otf") format('opentype');
 }
