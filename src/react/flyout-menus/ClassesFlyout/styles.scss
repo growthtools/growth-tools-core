@@ -11,7 +11,8 @@
 
   &__header {
     font-size: 16px;
-    font-weight: 900;
+    font-family: $font-family-primary;
+    font-weight: $font-weight-900;
     letter-spacing: 2px;
     line-height: 24px;
     text-align: center;
@@ -30,7 +31,8 @@
   &__secondary &__header {
     color: $sub-text;
     font-size: 16px;
-    font-weight: 900;
+    font-family: $font-family-primary;
+    font-weight: $font-weight-900;
     letter-spacing: 2px;
     line-height: 24px;
     text-align: center;
@@ -57,7 +59,8 @@
 
     &__type {
       font-size: 12px;
-      font-weight: bold;
+      font-family: $font-family-primary;
+      font-weight: $font-weight-700;
       letter-spacing: 2.4px;
       line-height: 16px;
     }
@@ -71,7 +74,8 @@
 
     &__name {
       margin-top: 4px;
-      font-weight: bold;
+      font-family: $font-family-primary;
+      font-weight: $font-weight-700;
     }
 
     &__link,
@@ -95,7 +99,8 @@
       transition: 0.2s ease-out;
       color: rgba(black,0.7);
       font-size: 14px;
-      font-weight: bold;
+      font-family: $font-family-primary;
+      font-weight: $font-weight-700;
       line-height: 20px;
       display: flex;
       justify-content: center;

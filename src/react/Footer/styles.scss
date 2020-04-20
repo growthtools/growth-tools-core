@@ -70,8 +70,8 @@ footer .menu-group {
         height: 20px;
         color: #cfd8dc;
         font-size: 14px;
-        font-family: 'BrandonText-Black';
-        font-weight: 900;
+        font-family: $font-family-primary;
+        font-weight: $font-weight-900;
         letter-spacing: 1.75px;
         line-height: 20px;
 
@@ -101,7 +101,7 @@ footer .menu-group {
       a {
         color: #90a4ae;
         font-size: 14px;
-        font-weight: 500;
+        font-weight: $font-weight-500;
         letter-spacing: 1px;
         display: inline-block;
         line-height: 1rem;
@@ -147,7 +147,7 @@ footer .menu-group {
         height: 17px;
         color: #90a4ae;
         font-size: 12px;
-        font-weight: 300;
+        font-weight: $font-weight-300;
         line-height: 17px;
         text-align: center;
 
@@ -155,7 +155,7 @@ footer .menu-group {
         span {
             transform: translateY(-1px);
             display: inline-block;
-            font-weight: 500;
+            font-weight: $font-weight-500;
             margin-left: 3px;
             margin-right: 3px;
         }
@@ -183,7 +183,7 @@ footer .user-actions {
   &__btn-signin {
     @include flex-centered;
     width: 98px;
-    font-weight: bold;
+    font-weight: $font-weight-700;
     border: 2px solid $light-green;
 
     &:hover {
@@ -196,7 +196,7 @@ footer .user-actions {
     flex-grow: 2;
     max-width: 224px;
     margin-left: 16px;
-    font-weight: 500;
+    font-weight: $font-weight-500;
     transition: 0.1s ease-out;
     background-color: white;
 
@@ -209,7 +209,7 @@ footer .user-actions {
   &__btn-signin,
   &__btn-create-account {
     @include flex-centered;
-    font-family: "Brandon Text";
+    font-family: $font-family-primary;
     height: 32px;
     color: $light-green;
     font-size: 14px;

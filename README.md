@@ -149,14 +149,14 @@ In the (unlikely) event these font files are not already included in the consumi
 1. Clone this repository to your local machine.
 2. Navigate to the `core` directory and install dependencies:
 ```
-$ cd /path/to/@growth-tools/core;
-$ npm install;
+$ cd /path/to/@growth-tools/core
+$ npm install
 ```
 3. Link the package to your local test project:
 ```
 $ npm link; # while still in @growth-tools/core directory
-$ cd /path/to/local/test/project;
-$ npm link @growth-tools/core;
+$ cd /path/to/local/test/project
+$ npm link @growth-tools/core
 ```
 (Documentation for [`npm link`](https://docs.npmjs.com/cli/link.html)).
 

@@ -17,7 +17,7 @@ $mobile-menu-header-height: 60px;
   transition: opacity 0.15s ease-out;
   pointer-events: none;
   background-color: rgb(20,33,95);
-  font-family: "Brandon Text", sans-serif;
+  font-family: $font-family-primary, sans-serif;
 
   /*
    * MENU HEADER
@@ -93,9 +93,9 @@ $mobile-menu-header-height: 60px;
       margin-top: 56px;
       height: 50px;
       width: 70%;
-      font-family: "Brandon Text", "BrandonText", sans-serif;
+      font-family: $font-family-primary, sans-serif;
       font-size: 20px;
-      font-weight: bold;
+      font-weight: $font-weight-700;
       text-align: center;
       border-radius: 6px;
       background-color: #2CD886;
@@ -162,18 +162,18 @@ $mobile-menu-header-height: 60px;
     .copyright-privacy-terms {
       color: #78909c;
       font-size: 11px;
-      font-weight: normal;
+      font-weight: $font-weight-400;
       line-height: 16px;
       text-align: center;
 
       &,
       a {
-        font-family: "Brandon Text", "BrandonText", sans-serif;
+        font-family: $font-family-primary, sans-serif;
       }
 
       a {
         font-size: 11px;
-        font-weight: normal;
+        font-weight: $font-weight-400;
         color: #2cd886;
 
         &:hover {
@@ -188,16 +188,16 @@ $mobile-menu-header-height: 60px;
     margin-top: 2rem;
     padding-top: 2rem;
     border-top: 1px solid #2A3CB9;
-    
+
     a {
       color: #78909C;
     }
   }
 
   a, button {
-    font-family: "Brandon Grotesque", "BrandonGrotesque", sans-serif;
+    font-family: $font-family-secondary, sans-serif;
     font-size: 24px;
-    font-weight: 900;
+    font-weight: $font-weight-900;
     line-height: 40px;
     color: white;
     text-overflow: ellipsis;
@@ -216,8 +216,8 @@ $mobile-menu-header-height: 60px;
 
   .link-user-account,
   .link-logout {
-    font-family: 'Brandon Text';
-    font-weight: 500;
+    font-family: $font-family-primary;
+    font-weight: $font-weight-500;
   }
 
   button {
@@ -278,7 +278,7 @@ $mobile-menu-header-height: 60px;
   // Classes flyout CTA button link
   #mobile-menu .current-accelerator__link {
     font-size: 14px;
-    font-weight: bold;
+    font-weight: $font-weight-700;
     line-height: 20px;
     color: rgba(black, 0.7);
   }
