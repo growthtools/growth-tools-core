@@ -161,3 +161,15 @@ $ npm link @growth-tools/core
 (Documentation for [`npm link`](https://docs.npmjs.com/cli/link.html)).
 
 4. The package should now be accessible to your local project for testing. Use as described above.
+
+## How to update and release a new version
+
+1. Make sure `master` is up-to-date and contains latest changes (`$ git checkout master && git pull`).
+1. Follow the [semantic versioning spec](https://semver.org/).
+1. Inside this project, on `master`, at the root, run: `$ npm version <update_type>` (`patch`, `major`, or `minor`) or enter new version number in place of `<update_type>`.
+1. Double check the local `package.json` file and commit the update (to `master`).
+1. Tag the commit with the version new version number (`$ git tag v<version number; 1.2.2>`).
+1. Run: `$ npm publish`.
+1. Check our [package page](https://www.npmjs.com/package/@growth-tools/core) to make sure the version was updated.
+1. Push the changes to Github (`$ git push && git push --tags`).
+
