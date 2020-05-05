@@ -32,15 +32,21 @@
 }
 
 #coaching-link {
-  padding-left: 20px;
-	color: $sub-text;
-	font-size: 14px;
-	font-weight: $font-weight-900;
-	letter-spacing: 1.75px;
-	line-height: 20px;
+  height: 40px;
+  width: 104px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #2cd886;
+  line-height: 39px;
+  border-radius: 6px;
+  transition: all 0.15s ease-out;
+  background-color: white;
+  margin-left: 1em;
 
   &:hover {
-    color: $light-green;
+    background-color: #2cd886;
+    color: white;
   }
 }
 
