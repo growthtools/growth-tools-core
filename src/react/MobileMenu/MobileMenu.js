@@ -140,8 +140,12 @@ class MobileMenu extends React.Component {
               <ResourcesFlyout />
             </div>
           </li>
-          <li> <a href="https://growthtools.com/apply"> COACHING </a> </li>
-          <li> <a href="/signin"> SIGN IN </a> </li>
+          <li>
+            <a href="https://growthtools.com/apply">COACHING</a>
+          </li>
+          <li>
+            <a href="/signin"> SIGN IN </a>
+          </li>
         </ul>
         <button
           className={[
@@ -163,20 +167,26 @@ class MobileMenu extends React.Component {
     return (
       <React.Fragment>
         <ul>
-          <li> <a href="/action-guides"> ACTION GUIDES </a> </li>
-          <li> <a href="/my-tools"> YOUR TOOLS </a> </li>
-          <li> <a href="/my-training"> YOUR TRAINING </a> </li>
+          <li>
+            <a href="/action-guides"> ACTION GUIDES </a>
+          </li>
+          <li>
+            <a href="/my-tools"> YOUR TOOLS </a>
+          </li>
+          <li>
+            <a href="/my-training"> YOUR TRAINING </a>
+          </li>
         </ul>
         <ul className={styles["user-account-links"]}>
           <li>
-            {" "}
-            <a href="/profile" className={styles["link-user"]}> {userEmail} </a>
-            {" "}
+            <a href="/profile" className={styles["link-user"]}>
+              {userEmail}
+            </a>
           </li>
           <li>
-            {" "}
-            <a href="/signout" className={styles["link-logout"]}> SIGN OUT </a>
-            {" "}
+            <a href="/signout" className={styles["link-logout"]}>
+              SIGN OUT
+            </a>
           </li>
         </ul>
       </React.Fragment>
@@ -191,7 +201,6 @@ class MobileMenu extends React.Component {
 
     return (
       <div id={styles["mobile-menu-wrapper"]}>
-
         {/* mobile menu hamburger button */}
         <button id={styles["growth-tools-menu-btn"]} onClick={this.displayMenu}>
           <img src={MENU_ICON} alt="Growth Tools Logo" />
@@ -203,7 +212,6 @@ class MobileMenu extends React.Component {
           className={menuIsVisible ? styles["visible"] : ""}
           style={{ display: "block" }}
         >
-
           {/* Menu Header */}
           <div className={styles["menu-header"]}>
             <a
@@ -234,12 +242,7 @@ class MobileMenu extends React.Component {
             <div className={styles["menu-footer"]}>
               <img src={GROWTH_TOOLS_LOGO_DARK} alt="Growth Tools logo" />
               <div className={styles["copyright-privacy-terms"]}>
-                ©
-                {" "}
-                {new Date().getFullYear()}
-                {" "}
-                Growth Tools ·
-                {" "}
+                © {new Date().getFullYear()} Growth Tools ·
                 <a>Privacy & Terms</a>
               </div>
             </div>
