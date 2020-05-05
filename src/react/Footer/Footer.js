@@ -248,8 +248,10 @@ Footer.propTypes = {
  */
 function getListItemLink({ name, href }) {
   return (
-    <li>
-      <a href={href} className="link-secondary"> {name} </a>
+    <li key={`${name}${href}`}>
+      <a href={href} className="link-secondary">
+        {name}
+      </a>
     </li>
   );
 }
