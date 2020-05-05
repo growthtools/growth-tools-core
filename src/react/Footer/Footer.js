@@ -84,7 +84,6 @@ function Footer(props) {
 
   return (
     <footer className={footerCSSClassName}>
-
       {/* Social Links */}
       <div className={styles["social-links"]}>
         <a
@@ -107,9 +106,7 @@ function Footer(props) {
         {/* FREE TOOLS SECTION */}
         <section className={styles["menu-group"]}>
           <h4>
-            <a href={`${GROWTH_TOOLS_DOMAIN}/tools`}>
-              TOOLS
-            </a>
+            <a href={`${GROWTH_TOOLS_DOMAIN}/tools`}>TOOLS</a>
           </h4>
           <ul className={styles["nav-list"]}>
             {LINKS_FREE_TOOLS.map(getListItemLink)}
@@ -119,9 +116,7 @@ function Footer(props) {
         {/* RESOURCES SECTION */}
         <section className={styles["menu-group"]}>
           <h4>
-            <a href="https://blog.videofruit.com">
-              Resources
-            </a>
+            <a href="https://blog.videofruit.com">Resources</a>
           </h4>
           <ul
             className={[styles["nav-list"], styles["nav-list--resources"]].join(
@@ -132,28 +127,10 @@ function Footer(props) {
           </ul>
         </section>
 
-        {/* TRAINING SECTION */}
-        <section className={styles["menu-group"]}>
-          <h4>
-            <a href={`${GROWTH_TOOLS_DOMAIN}/training`}>
-              Classes
-            </a>
-          </h4>
-          <ul
-            className={[styles["nav-list"], styles["nav-list--training"]].join(
-              " "
-            )}
-          >
-            {LINKS_TRAINING.map(getListItemLink)}
-          </ul>
-        </section>
-
         {/* COACHING SECTION */}
         <section className={styles["menu-group"]}>
           <h4>
-            <a href="https://growthtools.com/apply">
-              Coaching
-            </a>
+            <a href="https://growthtools.com/apply">Coaching</a>
           </h4>
           <ul className={styles["nav-list"]}>
             <li>
@@ -176,7 +153,7 @@ function Footer(props) {
         </section>
 
         {/* User Action Buttons
-          * Sign In + Create Account */}
+         * Sign In + Create Account */}
         <div className={styles["user-actions"]}>
           <a
             className={styles["user-actions__btn-signin"]}
@@ -225,17 +202,19 @@ function Footer(props) {
             alt="Growth Tools bars"
             className={styles["not-mobile"]}
           />
-          {lightsAreOn
-            ? <img
-                src={ICON_GROWTH_TOOLS}
-                alt="Growth Tools"
-                className={styles["mobile"]}
-              />
-            : <img
-                src={ICON_GROWTH_TOOLS_WHITE}
-                alt="Growth Tools"
-                className={styles["mobile"]}
-              />}
+          {lightsAreOn ? (
+            <img
+              src={ICON_GROWTH_TOOLS}
+              alt="Growth Tools"
+              className={styles["mobile"]}
+            />
+          ) : (
+            <img
+              src={ICON_GROWTH_TOOLS_WHITE}
+              alt="Growth Tools"
+              className={styles["mobile"]}
+            />
+          )}
         </div>
         <div className={styles["copyright"]}>
           © {new Date().getFullYear()} <span>Growth Tools</span> •
@@ -264,8 +243,10 @@ Footer.propTypes = {
  */
 function getListItemLink({ name, href }) {
   return (
-    <li>
-      <a href={href} className="link-secondary"> {name} </a>
+    <li key={`${name}${href}`}>
+      <a href={href} className="link-secondary">
+        {name}
+      </a>
     </li>
   );
 }

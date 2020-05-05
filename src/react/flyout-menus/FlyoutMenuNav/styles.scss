@@ -64,10 +64,6 @@
     right: -56px;
   }
 
-  .flyout-menu--classes {
-    right: -77px;
-  }
-
   .flyout-menu--resources {
     right: -72px;
   }
@@ -114,11 +110,6 @@
     transform: translateX(116px);
   }
 
-  .menu-item--classes:hover ~ .flyout-menu-anchor-box {
-    transform: translateX(240px);
-  }
-
-
   /*
    * Flyout Menu Animation Keyframes
    * __________________________________________ */
@@ -144,10 +135,6 @@
     }
   }
 
-  .flyout-menu--classes.a-slide-right {
-    animation-name: shiftRightClasses;
-  }
-
   .flyout-menu--resources.a-slide-right {
     animation-name: shiftRightResources;
   }
@@ -156,9 +143,6 @@
     animation-name: shiftLeftTools;
   }
 
-  .flyout-menu--classes.a-slide-left {
-    animation-name: shiftLeftClasses;
-  }
 
   .flyout-menu--resources.a-slide-left {
     animation-name: shiftLeftResources;
@@ -167,11 +151,6 @@
   @keyframes fadeIn {
     from { opacity: 0; }
     to   { opacity: 1; }
-  }
-
-  @keyframes shiftRightClasses {
-    from { transform: scaleY(1.14) translateX(-5px); }
-    to   { transform: none; }
   }
 
   @keyframes shiftRightResources {

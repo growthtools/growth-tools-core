@@ -275,13 +275,6 @@ $mobile-menu-header-height: 60px;
     perspective: 1000px;
   }
 
-  // Classes flyout CTA button link
-  #mobile-menu .current-accelerator__link {
-    font-size: 14px;
-    font-weight: $font-weight-700;
-    line-height: 20px;
-    color: rgba(black, 0.7);
-  }
 }
 
 @include for-sm-down {

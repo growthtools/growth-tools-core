@@ -67,9 +67,6 @@ Displays a Growth Tools logo linking to the Growth Tools home page and navigatio
 `lightsAreOn`
 - Affects the colors of the header elements. `true` assumes a page with a light background and is the default value.
 
-`currentAccelerator`
-- Data for the Growth Tools accelerator currently open for enrollment. Necessary for the `CLASSES` flyout menu displayed by the header.
-
 #### Prop Types Definition
 
 ```
@@ -79,13 +76,6 @@ Header.defaultProps = {
 
 Header.propTypes = {
   lightsAreOn: PropTypes.bool.isRequired,
-  currentAccelerator: PropTypes.shape({
-    accelerator_type: PropTypes.string.isRequired,
-    goal: PropTypes.string.isRequired,
-    num_seats_remaining: PropTypes.number.isRequired,
-    sales_page_url: PropTypes.string.isRequired,
-    enrollment_is_open: PropTypes.bool.isRequired
-  }).isRequired
 };
 ```
 
@@ -95,10 +85,8 @@ Header.propTypes = {
 import { Header } from "@growth-tools/core";
 import "@growth-tools/core/dist/main.css";
 
-const CURRENT_ACCELERATOR = { ... };
-
 ReactDOM.render(
-  <Header currentAccelerator={CURRENT_ACCELERATOR} />,
+  <Header />,
   document.getElementById("header-root")
 );
 ```

@@ -5,7 +5,6 @@ import styles from "./styles.scss";
 
 import ToolsFlyout from "../flyout-menus/ToolsFlyout/ToolsFlyout";
 import ResourcesFlyout from "../flyout-menus/ResourcesFlyout/ResourcesFlyout";
-import ClassesFlyout from "../flyout-menus/ClassesFlyout/ClassesFlyout";
 
 const MENU_ICON = `${GOOGLE_STORAGE_DOMAIN}/hamburger-menu@2x.png`;
 const GROWTH_TOOLS_ICON = `${GOOGLE_STORAGE_DOMAIN}/GT-icon@2x.png`;
@@ -18,8 +17,7 @@ const GROWTH_TOOLS_LOGO_LIGHT = `${GOOGLE_STORAGE_DOMAIN}/logo/blue-bars.svg`;
 
 const MENU_ITEM = {
   Tools: "Tools",
-  Resources: "Resources",
-  Classes: "Classes"
+  Resources: "Resources"
 };
 
 /**
@@ -42,22 +40,6 @@ class MobileMenu extends React.Component {
     this.handleMenuItemBtnClick = this.handleMenuItemBtnClick.bind(this);
 
     this.menuBodyRef = React.createRef();
-  }
-
-  componentDidMount() {
-    this.logErrorIfCurrentAcceleratorDoesNotExist();
-  }
-
-  /**
-   * MobileMenu expects that window.currentAccelerator is initialized.
-   * This method prints an error if it's not.
-   *
-   * Primarily useful during development.
-   */
-  logErrorIfCurrentAcceleratorDoesNotExist() {
-    if (!window.currentAccelerator) {
-      console.error("currentAccelerator is not initialized!");
-    }
   }
 
   displayMenu() {
@@ -130,35 +112,10 @@ class MobileMenu extends React.Component {
    * @returns {JSX} the menu content for logged-out users
    */
   getMenuItemsForLoggedOutUser() {
-    // Defensive programming for CLASSES menu link:
-    //
-    // If the current accelerator is not set on the window as it should,
-    // then provide a direct link to the /training page instead of the
-    // button link + Classes flyout menu.
-    const { currentAccelerator } = window;
-    const classesListItemContent = currentAccelerator
-      ? <React.Fragment>
-          <button
-            onClick={() => this.handleMenuItemBtnClick(MENU_ITEM.Classes)}
-          >
-            CLASSES
-          </button>
-          <div className={styles["flyout-list-item__flyout"]}>
-            <ClassesFlyout currentAccelerator={currentAccelerator} />
-          </div>
-        </React.Fragment>
-      : <a
-          href="https://growthtools.com/training"
-          style={{ textAlign: "center" }}
-        >
-          {" "}CLASSES{" "}
-        </a>;
-
     const cssClassToolsItem = this.getCSSClassForMenuItem(MENU_ITEM.Tools);
     const cssClassResourcesItem = this.getCSSClassForMenuItem(
       MENU_ITEM.Resources
     );
-    const cssClassClassesItem = this.getCSSClassForMenuItem(MENU_ITEM.Classes);
 
     return (
       <React.Fragment>
@@ -183,13 +140,12 @@ class MobileMenu extends React.Component {
               <ResourcesFlyout />
             </div>
           </li>
-          <li className={cssClassClassesItem}>
-
-            {classesListItemContent}
-
+          <li>
+            <a href="https://growthtools.com/apply">COACHING</a>
           </li>
-          <li> <a href="https://growthtools.com/apply"> COACHING </a> </li>
-          <li> <a href="/signin"> SIGN IN </a> </li>
+          <li>
+            <a href="/signin"> SIGN IN </a>
+          </li>
         </ul>
         <button
           className={[
@@ -211,20 +167,26 @@ class MobileMenu extends React.Component {
     return (
       <React.Fragment>
         <ul>
-          <li> <a href="/action-guides"> ACTION GUIDES </a> </li>
-          <li> <a href="/my-tools"> YOUR TOOLS </a> </li>
-          <li> <a href="/my-training"> YOUR TRAINING </a> </li>
+          <li>
+            <a href="/action-guides"> ACTION GUIDES </a>
+          </li>
+          <li>
+            <a href="/my-tools"> YOUR TOOLS </a>
+          </li>
+          <li>
+            <a href="/my-training"> YOUR TRAINING </a>
+          </li>
         </ul>
         <ul className={styles["user-account-links"]}>
           <li>
-            {" "}
-            <a href="/profile" className={styles["link-user"]}> {userEmail} </a>
-            {" "}
+            <a href="/profile" className={styles["link-user"]}>
+              {userEmail}
+            </a>
           </li>
           <li>
-            {" "}
-            <a href="/signout" className={styles["link-logout"]}> SIGN OUT </a>
-            {" "}
+            <a href="/signout" className={styles["link-logout"]}>
+              SIGN OUT
+            </a>
           </li>
         </ul>
       </React.Fragment>
@@ -239,7 +201,6 @@ class MobileMenu extends React.Component {
 
     return (
       <div id={styles["mobile-menu-wrapper"]}>
-
         {/* mobile menu hamburger button */}
         <button id={styles["growth-tools-menu-btn"]} onClick={this.displayMenu}>
           <img src={MENU_ICON} alt="Growth Tools Logo" />
@@ -251,7 +212,6 @@ class MobileMenu extends React.Component {
           className={menuIsVisible ? styles["visible"] : ""}
           style={{ display: "block" }}
         >
-
           {/* Menu Header */}
           <div className={styles["menu-header"]}>
             <a
@@ -282,12 +242,7 @@ class MobileMenu extends React.Component {
             <div className={styles["menu-footer"]}>
               <img src={GROWTH_TOOLS_LOGO_DARK} alt="Growth Tools logo" />
               <div className={styles["copyright-privacy-terms"]}>
-                ©
-                {" "}
-                {new Date().getFullYear()}
-                {" "}
-                Growth Tools ·
-                {" "}
+                © {new Date().getFullYear()} Growth Tools ·
                 <a>Privacy & Terms</a>
               </div>
             </div>
