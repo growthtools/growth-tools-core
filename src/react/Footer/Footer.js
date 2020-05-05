@@ -132,22 +132,6 @@ function Footer(props) {
           </ul>
         </section>
 
-        {/* TRAINING SECTION */}
-        <section className={styles["menu-group"]}>
-          <h4>
-            <a href={`${GROWTH_TOOLS_DOMAIN}/training`}>
-              Classes
-            </a>
-          </h4>
-          <ul
-            className={[styles["nav-list"], styles["nav-list--training"]].join(
-              " "
-            )}
-          >
-            {LINKS_TRAINING.map(getListItemLink)}
-          </ul>
-        </section>
-
         {/* COACHING SECTION */}
         <section className={styles["menu-group"]}>
           <h4>

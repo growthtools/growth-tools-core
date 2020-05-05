@@ -5,7 +5,6 @@ import styles from "./styles.scss";
 
 import ToolsFlyout from "../flyout-menus/ToolsFlyout/ToolsFlyout";
 import ResourcesFlyout from "../flyout-menus/ResourcesFlyout/ResourcesFlyout";
-import ClassesFlyout from "../flyout-menus/ClassesFlyout/ClassesFlyout";
 
 const MENU_ICON = `${GOOGLE_STORAGE_DOMAIN}/hamburger-menu@2x.png`;
 const GROWTH_TOOLS_ICON = `${GOOGLE_STORAGE_DOMAIN}/GT-icon@2x.png`;
@@ -18,8 +17,7 @@ const GROWTH_TOOLS_LOGO_LIGHT = `${GOOGLE_STORAGE_DOMAIN}/logo/blue-bars.svg`;
 
 const MENU_ITEM = {
   Tools: "Tools",
-  Resources: "Resources",
-  Classes: "Classes"
+  Resources: "Resources"
 };
 
 /**
@@ -42,22 +40,6 @@ class MobileMenu extends React.Component {
     this.handleMenuItemBtnClick = this.handleMenuItemBtnClick.bind(this);
 
     this.menuBodyRef = React.createRef();
-  }
-
-  componentDidMount() {
-    this.logErrorIfCurrentAcceleratorDoesNotExist();
-  }
-
-  /**
-   * MobileMenu expects that window.currentAccelerator is initialized.
-   * This method prints an error if it's not.
-   *
-   * Primarily useful during development.
-   */
-  logErrorIfCurrentAcceleratorDoesNotExist() {
-    if (!window.currentAccelerator) {
-      console.error("currentAccelerator is not initialized!");
-    }
   }
 
   displayMenu() {
@@ -130,35 +112,10 @@ class MobileMenu extends React.Component {
    * @returns {JSX} the menu content for logged-out users
    */
   getMenuItemsForLoggedOutUser() {
-    // Defensive programming for CLASSES menu link:
-    //
-    // If the current accelerator is not set on the window as it should,
-    // then provide a direct link to the /training page instead of the
-    // button link + Classes flyout menu.
-    const { currentAccelerator } = window;
-    const classesListItemContent = currentAccelerator
-      ? <React.Fragment>
-          <button
-            onClick={() => this.handleMenuItemBtnClick(MENU_ITEM.Classes)}
-          >
-            CLASSES
-          </button>
-          <div className={styles["flyout-list-item__flyout"]}>
-            <ClassesFlyout currentAccelerator={currentAccelerator} />
-          </div>
-        </React.Fragment>
-      : <a
-          href="https://growthtools.com/training"
-          style={{ textAlign: "center" }}
-        >
-          {" "}CLASSES{" "}
-        </a>;
-
     const cssClassToolsItem = this.getCSSClassForMenuItem(MENU_ITEM.Tools);
     const cssClassResourcesItem = this.getCSSClassForMenuItem(
       MENU_ITEM.Resources
     );
-    const cssClassClassesItem = this.getCSSClassForMenuItem(MENU_ITEM.Classes);
 
     return (
       <React.Fragment>
@@ -182,11 +139,6 @@ class MobileMenu extends React.Component {
             <div className={styles["flyout-list-item__flyout"]}>
               <ResourcesFlyout />
             </div>
-          </li>
-          <li className={cssClassClassesItem}>
-
-            {classesListItemContent}
-
           </li>
           <li> <a href="https://growthtools.com/apply"> COACHING </a> </li>
           <li> <a href="/signin"> SIGN IN </a> </li>
