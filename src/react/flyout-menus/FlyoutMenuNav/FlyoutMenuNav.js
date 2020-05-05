@@ -111,7 +111,7 @@ class FlyoutMenuNav extends React.Component {
       ? styles["bg--light"]
       : styles["bg--dark"];
 
-    const flyoutMenuAnchorBoxClassName = styles["flyout-menu-anchor-box"] + "";
+    const flyoutMenuAnchorBoxClassName = styles["flyout-menu-anchor-box"];
 
     // Flyout menu class names
     const toolsMenuCSSClass = this.cssClassForToolsMenu();
