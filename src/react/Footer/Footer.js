@@ -165,7 +165,7 @@ function Footer(props) {
             className={styles["user-actions__btn-create-account"]}
             href={`${GROWTH_TOOLS_DOMAIN}/register`}
           >
-            Create Account
+            Create account
           </a>
         </div>
 
