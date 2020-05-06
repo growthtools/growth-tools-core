@@ -19,6 +19,10 @@ class Header extends React.Component {
   render() {
     const { lightsAreOn, currentAccelerator } = this.props;
 
+    let WORKWITHUS_URL = "https://lp.growthtools.com/apply-course?utm_source=";
+    let WORKWITHUS_UTM_PARAM = window.location.pathname == "/" ? "GT-Website-Nav" : window.location.pathname;
+    let WORKWITHUS_HREF = WORKWITHUS_URL + WORKWITHUS_UTM_PARAM;
+
     let headerCSSClassName = "", gtLogo = GROWTH_TOOLS_LOGO_DARK;
     if (lightsAreOn) {
       headerCSSClassName = styles["lights-on"];
@@ -44,7 +48,7 @@ class Header extends React.Component {
 
         <a
           id={styles["coaching-link"]}
-          href="https://lp.growthtools.com/apply-course?utm_source=GT-Website-Nav"
+          href={ WORKWITHUS_HREF }
           target="_blank"
         >
           COACHING
