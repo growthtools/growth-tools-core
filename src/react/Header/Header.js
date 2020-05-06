@@ -47,7 +47,7 @@ class Header extends React.Component {
           href="https://lp.growthtools.com/apply-course?utm_source=GT-Website-Nav"
           target="_blank"
         >
-          Work With Us
+          Work with us
         </a>
 
         <MobileMenu displayForLightBg={lightsAreOn} />
