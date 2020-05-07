@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./styles.scss";
 import { GROWTH_TOOLS_DOMAIN, GOOGLE_STORAGE_DOMAIN } from "../../js/constants";
+import { WORKWITHUS_HREF_DESKTOP } from "../../js/utm_params";
 
 import FlyoutMenuNav from "../flyout-menus/FlyoutMenuNav/FlyoutMenuNav";
 import MobileMenu from "../MobileMenu/MobileMenu";
@@ -18,10 +19,6 @@ const GROWTH_TOOLS_ICON = `${GOOGLE_STORAGE_DOMAIN}/GT-icon@2x.png`;
 class Header extends React.Component {
   render() {
     const { lightsAreOn, currentAccelerator } = this.props;
-
-    let WORKWITHUS_URL = "https://lp.growthtools.com/apply-course?utm_source=";
-    let WORKWITHUS_UTM_PARAM = window.location.pathname == "/" ? "GT-Website-Nav" : window.location.pathname;
-    let WORKWITHUS_HREF = WORKWITHUS_URL + WORKWITHUS_UTM_PARAM;
 
     let headerCSSClassName = "", gtLogo = GROWTH_TOOLS_LOGO_DARK;
     if (lightsAreOn) {
@@ -48,7 +45,7 @@ class Header extends React.Component {
 
         <a
           id={styles["coaching-link"]}
-          href={ WORKWITHUS_HREF }
+          href={WORKWITHUS_HREF_DESKTOP }
           target="_blank"
         >
           COACHING
