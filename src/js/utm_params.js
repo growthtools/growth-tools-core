@@ -1,28 +1,21 @@
 function generateUTMsource(pathname) {
   if (pathname == "/blog/covid-mastermind/") { // example
-    let workWithUsUTMsource = pathname + "posted-on-twitter-may2020"; //add custom UTM source here
-    return workWithUsUTMsource
+    return pathname + "posted-on-twitter-may2020"; //add custom UTM source here
   } else {
-    let workWithUsUTMsource = pathname; // then this is the default
-    return workWithUsUTMsource
+    return pathname; // then this is the default
   }
 }
 
 function getValues(pathname) {
-  const workWithUsURL = "https://lp.growthtools.com/apply-course?utm_source=";
-  const workWithUsUTMcontent = "?utm_content=";
-  const combined = workWithUsURL + generateUTMsource(pathname) + workWithUsUTMcontent;
-  return combined
+  return "https://lp.growthtools.com/apply-course?utm_source=" + generateUTMsource(pathname) + "?utm_content=";
 }
 
 function generatedesktopUTMparams(pathname) {
-  const workWithUsDesktop = getValues(pathname) + "work-with-me-button-5";  
-  return workWithUsDesktop
+  return getValues(pathname) + "work-with-me-button-10";  
 }
 
 function generatemobileUTMparams(pathname) {
-  const workWithUsMobile = getValues(pathname) + "mobile-menu-link-5";
-  return workWithUsMobile 
+  return getValues(pathname) + "mobile-menu-link-10";
 }
 
 export { generatedesktopUTMparams, generatemobileUTMparams }
