@@ -19,7 +19,9 @@ const GROWTH_TOOLS_ICON = `${GOOGLE_STORAGE_DOMAIN}/GT-icon@2x.png`;
 class Header extends React.Component {
   render() {
     const { lightsAreOn, currentAccelerator } = this.props;
-
+    
+    let pathname = window.location.pathname;
+    
     let headerCSSClassName = "", gtLogo = GROWTH_TOOLS_LOGO_DARK;
     if (lightsAreOn) {
       headerCSSClassName = styles["lights-on"];
@@ -45,7 +47,7 @@ class Header extends React.Component {
 
         <a
           id={styles["coaching-link"]}
-          href={ generateUTMparams("desktop") }
+          href={ generateUTMparams("desktop", pathname) }
           target="_blank"
         >
           COACHING
