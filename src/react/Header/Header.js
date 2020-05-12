@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./styles.scss";
 import { GROWTH_TOOLS_DOMAIN, GOOGLE_STORAGE_DOMAIN } from "../../js/constants";
-import { generateUTMparams } from "../../js/utm_params";
+import { generatedesktopUTMparams } from "../../js/utm_params";
 
 import FlyoutMenuNav from "../flyout-menus/FlyoutMenuNav/FlyoutMenuNav";
 import MobileMenu from "../MobileMenu/MobileMenu";
@@ -47,7 +47,7 @@ class Header extends React.Component {
 
         <a
           id={styles["coaching-link"]}
-          href={ generateUTMparams("desktop", pathname) }
+          href={ generatedesktopUTMparams(pathname) }
           target="_blank"
         >
           COACHING
