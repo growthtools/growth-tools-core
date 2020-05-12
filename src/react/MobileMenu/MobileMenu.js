@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { GROWTH_TOOLS_DOMAIN, GOOGLE_STORAGE_DOMAIN } from "../../js/constants";
-import { WORKWITHUS_HREF_MOBILE } from "../../js/utm_params";
+import { generateUTMparams } from "../../js/utm_params";
 import styles from "./styles.scss";
 
 import ToolsFlyout from "../flyout-menus/ToolsFlyout/ToolsFlyout";
@@ -142,7 +142,7 @@ class MobileMenu extends React.Component {
             </div>
           </li>
           <li>
-            <a href={WORKWITHUS_HREF_MOBILE}>COACHING</a>
+            <a href={generateUTMparams("mobile")}>COACHING</a>
           </li>
           <li>
             <a href="/signin"> SIGN IN </a>

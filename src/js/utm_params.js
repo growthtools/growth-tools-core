@@ -1,9 +1,17 @@
-const WORKWITHUS_URL = "https://lp.growthtools.com/apply-course?utm_source=";
-const WORKWITHUS_UTM_SOURCE = window.location.pathname == "/" ? "GT-Website-Nav" : window.location.pathname;
-const WORKWITHUS_UTM_CONTENT = "?utm_content=";
-const CONCAT = WORKWITHUS_URL + WORKWITHUS_UTM_SOURCE + WORKWITHUS_UTM_CONTENT;
+const workWithUsURL = "https://lp.growthtools.com/apply-course?utm_source=";
+const workWithUsUTMsource = window.location.pathname;
+const workWithUsUTMcontent = "?utm_content=";
+const concat = workWithUsURL + workWithUsUTMsource + workWithUsUTMcontent;
 
-const WORKWITHUS_HREF_MOBILE = CONCAT + "mobile-menu-link";
-const WORKWITHUS_HREF_DESKTOP = CONCAT + "work-with-me-button";
+const workWithUsMobile = concat + "mobile-menu-link";
+const workWithUsDesktop = concat + "work-with-me-button";
 
-export { WORKWITHUS_HREF_DESKTOP, WORKWITHUS_HREF_MOBILE }
+function generateUTMparams(type) {
+  if (type == "mobile") {
+    return workWithUsMobile
+  } else if (type == "desktop") {
+    return workWithUsDesktop
+  } 
+}
+
+export { generateUTMparams }

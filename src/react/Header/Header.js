@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./styles.scss";
 import { GROWTH_TOOLS_DOMAIN, GOOGLE_STORAGE_DOMAIN } from "../../js/constants";
-import { WORKWITHUS_HREF_DESKTOP } from "../../js/utm_params";
+import { generateUTMparams } from "../../js/utm_params";
 
 import FlyoutMenuNav from "../flyout-menus/FlyoutMenuNav/FlyoutMenuNav";
 import MobileMenu from "../MobileMenu/MobileMenu";
@@ -45,7 +45,7 @@ class Header extends React.Component {
 
         <a
           id={styles["coaching-link"]}
-          href={WORKWITHUS_HREF_DESKTOP }
+          href={ generateUTMparams("desktop") }
           target="_blank"
         >
           COACHING
