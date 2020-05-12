@@ -117,7 +117,8 @@ class MobileMenu extends React.Component {
     const cssClassResourcesItem = this.getCSSClassForMenuItem(
       MENU_ITEM.Resources
     );
-
+    let pathname = window.location.pathname;
+    
     return (
       <React.Fragment>
         <ul>
@@ -142,7 +143,7 @@ class MobileMenu extends React.Component {
             </div>
           </li>
           <li>
-            <a href={generateUTMparams("mobile")}>COACHING</a>
+            <a href={generateUTMparams("mobile", pathname)}>COACHING</a>
           </li>
           <li>
             <a href="/signin"> SIGN IN </a>
