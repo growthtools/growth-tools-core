@@ -11,11 +11,11 @@ function getValues(pathname) {
 }
 
 function generatedesktopUTMparams(pathname) {
-  return getValues(pathname) + "work-with-me-button-10";  
+  return getValues(pathname) + "work-with-me-button";  
 }
 
 function generatemobileUTMparams(pathname) {
-  return getValues(pathname) + "mobile-menu-link-10";
+  return getValues(pathname) + "mobile-menu-link";
 }
 
 export { generatedesktopUTMparams, generatemobileUTMparams }
