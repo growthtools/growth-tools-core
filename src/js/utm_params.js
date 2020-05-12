@@ -9,22 +9,19 @@ function generateUTMsource(pathname) {
 }
 
 function getValues(pathname) {
-  let workWithUsUTMsource = generateUTMsource(pathname);
   const workWithUsURL = "https://lp.growthtools.com/apply-course?utm_source=";
   const workWithUsUTMcontent = "?utm_content=";
-  const combined = workWithUsURL + workWithUsUTMsource + workWithUsUTMcontent;
+  const combined = workWithUsURL + generateUTMsource(pathname) + workWithUsUTMcontent;
   return combined
 }
 
 function generatedesktopUTMparams(pathname) {
-  let concat = getValues(pathname);
-  const workWithUsDesktop = concat + "work-with-me-button-2";  
+  const workWithUsDesktop = getValues(pathname) + "work-with-me-button-5";  
   return workWithUsDesktop
 }
 
 function generatemobileUTMparams(pathname) {
-  let concat = getValues(pathname);
-  const workWithUsMobile = concat + "mobile-menu-link-2";
+  const workWithUsMobile = getValues(pathname) + "mobile-menu-link-5";
   return workWithUsMobile 
 }
 
