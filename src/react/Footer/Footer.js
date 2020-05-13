@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styles from "./styles.scss";
 
 import { GROWTH_TOOLS_DOMAIN, GOOGLE_STORAGE_DOMAIN } from "../../js/constants";
+import { workWithUsURLDesktop } from "../../js/utm_params";
 
 //
 // Icons
@@ -82,6 +83,11 @@ function Footer(props) {
     iconFacebook = ICON_FACEBOOK_DARK;
   }
 
+  const workWithUsURL = workWithUsURLDesktop(
+    window.location.pathname,
+    "GT-Nav-Footer"
+  );
+
   return (
     <footer className={footerCSSClassName}>
       {/* Social Links */}
@@ -130,14 +136,11 @@ function Footer(props) {
         {/* COACHING SECTION */}
         <section className={styles["menu-group"]}>
           <h4>
-            <a href="https://growthtools.com/apply">Coaching</a>
+            <a href={workWithUsURL}>Coaching</a>
           </h4>
           <ul className={styles["nav-list"]}>
             <li>
-              <a
-                href="https://growthtools.com/apply"
-                className={styles["link-secondary"]}
-              >
+              <a href={workWithUsURL} className={styles["link-secondary"]}>
                 Schedule a consult
               </a>
             </li>

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { GROWTH_TOOLS_DOMAIN, GOOGLE_STORAGE_DOMAIN } from "../../js/constants";
-import { generatemobileUTMparams } from "../../js/utm_params";
+import { workWithUsURLMobile } from "../../js/utm_params";
 import styles from "./styles.scss";
 
 import ToolsFlyout from "../flyout-menus/ToolsFlyout/ToolsFlyout";
@@ -118,7 +118,7 @@ class MobileMenu extends React.Component {
       MENU_ITEM.Resources
     );
     let pathname = window.location.pathname;
-    
+
     return (
       <React.Fragment>
         <ul>
@@ -143,7 +143,7 @@ class MobileMenu extends React.Component {
             </div>
           </li>
           <li>
-            <a href={generatemobileUTMparams(pathname)}>COACHING</a>
+            <a href={workWithUsURLMobile(pathname)}>COACHING</a>
           </li>
           <li>
             <a href="/signin"> SIGN IN </a>

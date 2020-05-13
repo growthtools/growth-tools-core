@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./styles.scss";
 import { GROWTH_TOOLS_DOMAIN, GOOGLE_STORAGE_DOMAIN } from "../../js/constants";
-import { generatedesktopUTMparams } from "../../js/utm_params";
+import { workWithUsURLDesktop } from "../../js/utm_params";
 
 import FlyoutMenuNav from "../flyout-menus/FlyoutMenuNav/FlyoutMenuNav";
 import MobileMenu from "../MobileMenu/MobileMenu";
@@ -19,10 +19,11 @@ const GROWTH_TOOLS_ICON = `${GOOGLE_STORAGE_DOMAIN}/GT-icon@2x.png`;
 class Header extends React.Component {
   render() {
     const { lightsAreOn, currentAccelerator } = this.props;
-    
+
     let pathname = window.location.pathname;
-    
-    let headerCSSClassName = "", gtLogo = GROWTH_TOOLS_LOGO_DARK;
+
+    let headerCSSClassName = "",
+      gtLogo = GROWTH_TOOLS_LOGO_DARK;
     if (lightsAreOn) {
       headerCSSClassName = styles["lights-on"];
       gtLogo = GROWTH_TOOLS_LOGO_LIGHT;
@@ -30,7 +31,6 @@ class Header extends React.Component {
 
     return (
       <header className={headerCSSClassName}>
-
         <a id={styles["growth-tools-link"]} href={GROWTH_TOOLS_DOMAIN}>
           <img
             src={GROWTH_TOOLS_ICON}
@@ -47,7 +47,7 @@ class Header extends React.Component {
 
         <a
           id={styles["coaching-link"]}
-          href={ generatedesktopUTMparams(pathname) }
+          href={workWithUsURLDesktop(pathname)}
           target="_blank"
         >
           COACHING
