@@ -50,7 +50,7 @@ class Header extends React.Component {
           href={workWithUsURLDesktop(pathname)}
           target="_blank"
         >
-          COACHING
+          Work with us
         </a>
 
         <MobileMenu displayForLightBg={lightsAreOn} />
