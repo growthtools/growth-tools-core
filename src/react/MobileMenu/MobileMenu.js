@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { GROWTH_TOOLS_DOMAIN, GOOGLE_STORAGE_DOMAIN } from "../../js/constants";
+import { workWithUsURLMobile } from "../../js/utm_params";
 import styles from "./styles.scss";
 
 import ToolsFlyout from "../flyout-menus/ToolsFlyout/ToolsFlyout";
@@ -116,6 +117,7 @@ class MobileMenu extends React.Component {
     const cssClassResourcesItem = this.getCSSClassForMenuItem(
       MENU_ITEM.Resources
     );
+    let pathname = window.location.pathname;
 
     return (
       <React.Fragment>
@@ -143,7 +145,7 @@ class MobileMenu extends React.Component {
           <li>
             <a href="https://lp.growthtools.com/apply-course?utm_source=GT-Website-Mobile-Nav">
               WORK WITH US
-            </a>
+            </a>          
           </li>
           <li>
             <a href="/signin"> SIGN IN </a>
