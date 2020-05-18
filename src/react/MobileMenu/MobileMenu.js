@@ -143,7 +143,9 @@ class MobileMenu extends React.Component {
             </div>
           </li>
           <li>
-            <a href={workWithUsURLMobile(pathname)}>COACHING</a>
+            <a href="https://lp.growthtools.com/apply-course?utm_source=GT-Website-Mobile-Nav">
+              WORK WITH US
+            </a>          
           </li>
           <li>
             <a href="/signin"> SIGN IN </a>
