@@ -25,7 +25,7 @@ function workWithUsURLDesktop(content, source = null) {
 
 export { workWithUsURLDesktop, workWithUsURLMobile };
 
-function paramString(contnet, source) {
+function paramString(content, source) {
   let params = new URLSearchParams();
   if (source !== "") {
     params.set("utm_source", source);
