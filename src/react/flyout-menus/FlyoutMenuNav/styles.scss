@@ -6,7 +6,9 @@
   display: flex;
   justify-content: flex-end;
   flex-grow: 2;
-
+    @include for-md-down {
+    display: block;
+  }
   /*
    * Flyout Menus
    * _________________________________________ */
