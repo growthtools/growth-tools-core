@@ -52,9 +52,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyPlugin([
-      { from: "src/assets/fonts", to: "fonts" },
-    ]),
+    new CopyPlugin({ patterns: [{ from: "src/assets/fonts", to: "fonts" }] }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].[hash].css",
