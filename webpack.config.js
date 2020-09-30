@@ -9,7 +9,7 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
-    libraryTarget: "umd"
+    libraryTarget: "umd",
   },
   module: {
     rules: [
@@ -20,7 +20,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: "babel-loader",
       },
       {
         test: /\.scss$/,
@@ -32,23 +32,23 @@ module.exports = {
               sourceMap: true,
               importLoaders: 1,
               modules: {
-                localIdentName: "[name]__[local]__[hash:base64:5]"
-              }
-            }
+                localIdentName: "[name]__[local]__[hash:base64:5]",
+              },
+            },
           },
           {
             loader: "sass-loader",
-            options: { sourceMap: true }
-          }
-        ]
+            options: { sourceMap: true },
+          },
+        ],
       },
-    ]
+    ],
   },
   resolve: {
     extensions: [".js", ".jsx", ".scss"],
     alias: {
-      "assets": path.resolve(__dirname, "assets")
-    }
+      assets: path.resolve(__dirname, "assets"),
+    },
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -57,8 +57,8 @@ module.exports = {
     ]),
     new MiniCssExtractPlugin({
       filename: "[name].css",
-      chunkFilename: "[id].[hash].css"
-    })
+      chunkFilename: "[id].[hash].css",
+    }),
   ],
   externals: {
     react: {
@@ -75,5 +75,5 @@ module.exports = {
       amd: "react-dom",
       umd: "react-dom",
     },
-  }
+  },
 };
