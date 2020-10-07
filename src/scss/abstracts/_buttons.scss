@@ -1,0 +1,137 @@
+@import "./variables";
+
+/********************
+Usage Example
+********************
+
+Tertiary buttons have svg icons,
+right/left margins may need to be added to the icon to
+accomodate spacing
+
+********************
+General Example
+********************
+<button class="btn btn-primary">Testing with longer text</button>
+<a href="" class="btn btn-primary">Testing with longer text</a>
+
+<button class="btn btn-primary small">Testing with longer text</button>
+<a href="" class="btn btn-primary small">Testing with longer text</a>
+
+********************/
+@mixin btn {
+  display: flex;
+  border: 1px solid transparent;
+  min-height: 48px;
+  font-family: "Brandon Text";
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  padding: 0 12px;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+@mixin btn-primary($font-color, $bg-color) {
+  @include btn;
+  background-color: $bg-color;
+  color: $font-color;
+  font-weight: bold;
+  transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+
+  a {
+    color: $font-color;
+    text-decoration: none;
+  }
+  &:hover {
+    box-shadow: 0 2px 24px 0 rgba($bg-color, 0.7);
+    cursor: pointer;
+    border: 1px solid $bg-color;
+  }
+  &:active {
+    background-color: darken($bg-color, 5%);
+  }
+  &:focus {
+    box-shadow: 0 0 0 8px rgba($bg-color, 0.2), 0 2px 24px 0 rgba($bg-color, 0.6);
+    outline: none;
+  }
+  &:disabled {
+    opacity: 0.2;
+  }
+}
+
+@mixin btn-secondary($color) {
+  @include btn;
+  border: 2px solid $color;
+  background-color: $white;
+  color: $color;
+  a {
+    color: $color;
+  }
+  &:hover {
+    box-shadow: 0 2px 24px 0 rgba($color, 0.7);
+    cursor: pointer;
+  }
+  &:active {
+    background-color: darken($color, 5%);
+  }
+  &:focus {
+    box-shadow: 0 0 0 8px rgba($color, 0.2), 0 2px 24px 0 rgba($color, 0.6);
+    outline: none;
+  }
+  &:disabled {
+    opacity: 0.2;
+  }
+}
+
+@mixin btn-tertiary($color) {
+  @include btn;
+  border-radius: 0.25rem;
+  color: $color;
+  box-shadow: none;
+  width: max-content;
+
+  a {
+    color: $color;
+  }
+
+  .fa {
+    font-size: 16px;
+    color: $color;
+  }
+
+  &:hover {
+    color: $color;
+    cursor: pointer;
+    background-color: lighten($color, 40%);
+  }
+
+  img {
+    height: 1.5em;
+    width: 1.5em;
+    padding-right: 0.2rem;
+    margin-left: -4px;
+  }
+}
+
+@mixin btn-small {
+  font-size: 14px;
+  min-height: 32px;
+}
+
+.btn.btn-primary {
+  @include btn-primary($white, $university-green);
+}
+.btn.btn-secondary {
+  @include btn-secondary($university-green);
+}
+.btn.btn-tertiary {
+  @include btn-tertiary($university-green);
+}
+.btn.small {
+  @include btn-small;
+}
