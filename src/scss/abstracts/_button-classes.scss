@@ -1,0 +1,35 @@
+@import "../abstracts/buttons";
+
+.btn-close {
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: url("/assets/images/icons/close.svg") center no-repeat;
+  background-size: 1.5rem;
+  will-change: transform;
+  transition: transform 0.2s ease-out;
+
+  &:hover {
+    transform: scale(1.15);
+  }
+}
+
+.btn {
+  @include btn;
+}
+.btn.btn-primary {
+  @include btn-primary($white, $university-green);
+}
+.btn.btn-secondary {
+  @include btn-secondary($university-green);
+}
+.btn.btn-tertiary {
+  @include btn-tertiary($university-green);
+}
+.btn.small,
+.btn.btn-sm,
+.input-group-sm .btn {
+  @include btn-small;
+  border-width: 1px;
+  min-height: 31px;
+}

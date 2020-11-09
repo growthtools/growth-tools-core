@@ -1,12 +1,12 @@
-@import "./variables";
+@import "../variables";
 
 /********************
 Usage Example
 ********************
 
-Tertiary buttons have svg icons,
+Tertiary buttons have svg icons, accommodated in example below,
 right/left margins may need to be added to the icon to
-accomodate spacing
+accomodate 8px spacing, see spacing variables for sizes.
 
 ********************
 General Example
@@ -19,12 +19,12 @@ General Example
 
 ********************/
 @mixin btn {
-  display: flex;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid transparent;
   min-height: 48px;
   font-family: "Brandon Text";
-  align-items: center;
-  justify-content: center;
   border-radius: 6px;
   padding: 0 12px;
   font-size: 20px;
@@ -42,6 +42,7 @@ General Example
   color: $font-color;
   font-weight: bold;
   transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0 2px 12px 0 rgba($bg-color, 0.25);
 
   a {
     color: $font-color;
@@ -56,7 +57,8 @@ General Example
     background-color: darken($bg-color, 5%);
   }
   &:focus {
-    box-shadow: 0 0 8px 8px rgba($bg-color, 0.2), 0 2px 24px 0 rgba($bg-color, 0.6);
+    box-shadow: 0 0 8px 8px rgba($bg-color, 0.2),
+      0 2px 24px 0 rgba($bg-color, 0.6);
     outline: none;
   }
   &:disabled {
@@ -121,17 +123,4 @@ General Example
 @mixin btn-small {
   font-size: 14px;
   min-height: 32px;
-}
-
-.btn.btn-primary {
-  @include btn-primary($white, $university-green);
-}
-.btn.btn-secondary {
-  @include btn-secondary($university-green);
-}
-.btn.btn-tertiary {
-  @include btn-tertiary($university-green);
-}
-.btn.small {
-  @include btn-small;
 }
