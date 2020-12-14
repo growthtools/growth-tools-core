@@ -1,10 +1,39 @@
+/********************
+ Growth University Brand Colors
+*********************/
+
+$university-green: #8cc63f;
+$university-green-bg: rgba($university-green, 0.05);
+$growth-tools-green: #2cd886;
+$growth-tools-gold: #ffd400;
+$drip-scripts-green: #17da5e;
+$goviral-orange: #ff7727;
+$welcomely-pink: #ef4b54;
+$attract-blue: #0974f0;
+$accelerator-blue: #009aff;
+
+// Brand Greys
+$grey-01: #f9fafa;
+$grey-02: #eceff1;
+$grey-03: #cfd8dc;
+$grey-04: #b0bec5;
+$grey-05: #90a4ae;
+$grey-06: #78909c;
+$grey-07: #607d8b;
+$grey-08: #546e7a;
+$grey-09: #455a64;
+$grey-10: #37474f;
+$grey-11: #263238;
+
+$border-color: $grey-02;
+
 /*
  * Colors
  * _______________________________________ */
 
 $green: #2cd886;
 $light-green: #2cd886;
-$dark-blue: #161F5D;
+$dark-blue: #161f5d;
 $grey: #90a4ae;
 $dark-grey: #263238;
 $grey-100: #f9fafa;
@@ -20,8 +49,8 @@ $gu-grey: $dark-grey;
 $accelerator-blue: #009aff;
 $accelerator-yellow: #ffd400;
 
-$font-family-primary: 'Brandon Text';
-$font-family-secondary: 'Brandon Grotesque';
+$font-family-primary: "Brandon Text";
+$font-family-secondary: "Brandon Grotesque";
 
 $font-weight-300: 300;
 $font-weight-400: 400; // normal
