@@ -1,0 +1,70 @@
+#gtb {
+  color: #263238;
+  font-family: "Brandon Text";
+  font-size: 16px;
+  &--checkbox {
+    .gtb-checkbox-wrapper {
+      margin-bottom: 1rem;
+      .gtb-checkbox-label {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        width: max-content;
+        color: #b0bec5;
+        font-size: 16px;
+        font-weight: 400;
+        user-select: none;
+        &.selected {
+          color: #263238;
+        }
+      }
+      input {
+        width: 0.1px;
+        height: 0.1px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+      }
+      // custom checkbox
+
+      .gtb-checkbox__box {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 0.5rem;
+        border-radius: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(140, 198, 63, 0.15);
+        border: 1px solid $university-green;
+
+        &:hover {
+          background-color: $border-color;
+          background-color: rgba(140, 198, 63, 0.35);
+        }
+      }
+      .gtb-checkbox__checkmark {
+        width: 14px;
+        opacity: 0;
+
+        /* small adjustment to center checkmark */
+        transform: translate(1px, 1px);
+      }
+      input:checked + .gtb-checkbox__box {
+        border-color: $university-green;
+        background-color: $university-green;
+
+        &:hover {
+          border-color: darken($university-green, 10%);
+          background-color: darken($university-green, 10%);
+        }
+      }
+
+      input:checked + .gtb-checkbox__box .gtb-checkbox__checkmark {
+        opacity: 1;
+      }
+    }
+  }
+}

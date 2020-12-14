@@ -1,0 +1,49 @@
+#gtb {
+  color: #263238;
+  font-family: "Brandon Text";
+  font-size: 16px;
+  &--input {
+    .gtb-input-wrapper {
+      .gtb-input-label {
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        color: #263238;
+        font-family: "Brandon Text";
+        font-size: 16px;
+      }
+      .gtb-input {
+        width: 100%;
+        margin-left: -1rem;
+        box-sizing: border-box;
+        font-family: "Brandon Text", sans-serif;
+        height: 48px;
+        border: 1px solid #cfd8dc;
+        border-radius: 6px;
+        padding: 0;
+        padding-left: 1rem;
+        font-size: 16px;
+
+        &::placeholder {
+          color: #b0bec5;
+          font-size: 16px;
+        }
+
+        &:focus {
+          border-color: #8cc63f;
+          border-radius: 6px;
+          box-shadow: 0 0 0 8px rgba(140, 198, 63, 0.3);
+          outline: none;
+        }
+        &:hover {
+          border-color: #8cc63f;
+        }
+        &:visited {
+          border-color: #b0bec5;
+        }
+        &:valid {
+          border-color: #b0bec5;
+        }
+      }
+    }
+  }
+}
