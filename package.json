@@ -1,6 +1,6 @@
 {
   "name": "@growth-tools/core",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "A package for functions and React components shared across Growth Tools web domains.",
   "main": "./dist/bundle.js",
   "scripts": {
