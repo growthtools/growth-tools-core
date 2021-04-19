@@ -40,14 +40,6 @@ class Header extends React.Component {
           <img src={gtLogo} alt="Growth Tools Logo" />
         </a>
 
-        <a
-          id={styles["coaching-link"]}
-          href={workWithUsURLDesktop(pathname)}
-          target="_blank"
-        >
-          Work with us
-        </a>
-
         <FlyoutMenuNav
           displayForLightBg={lightsAreOn}
           currentAccelerator={currentAccelerator}
