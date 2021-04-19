@@ -40,6 +40,14 @@ class Header extends React.Component {
           <img src={gtLogo} alt="Growth Tools Logo" />
         </a>
 
+        <a
+          id={styles["coaching-link"]}
+          href={workWithUsURLDesktop(pathname)}
+          target="_blank"
+        >
+          Work with us
+        </a>
+
         <FlyoutMenuNav
           displayForLightBg={lightsAreOn}
           currentAccelerator={currentAccelerator}
@@ -60,7 +68,7 @@ class Header extends React.Component {
 }
 
 Header.defaultProps = {
-  lightsAreOn: true
+  lightsAreOn: true,
 };
 
 Header.propTypes = {
@@ -70,8 +78,8 @@ Header.propTypes = {
     goal: PropTypes.string.isRequired,
     num_seats_remaining: PropTypes.number.isRequired,
     sales_page_url: PropTypes.string.isRequired,
-    enrollment_is_open: PropTypes.bool.isRequired
-  }).isRequired
+    enrollment_is_open: PropTypes.bool.isRequired,
+  }).isRequired,
 };
 
 export default Header;
