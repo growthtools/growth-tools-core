@@ -56,6 +56,29 @@
       }
   }
 
+  .menu-item--training {
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      background: #ef4b54;
+      height: 0.6rem;
+      width: 0.6rem;
+      right: 0.5rem;
+      top: 1.5rem;
+      border-radius: 50%;
+    }
+
+    a {
+      color: $grey;
+
+      &:hover {
+          color: $light-green;
+      }
+    }
+  }
+
   .menu-item:hover .flyout-menu {
     transform: perspective(480px) rotateX(0);
     opacity: 1;
@@ -80,7 +103,7 @@
     display: flex;
     position: absolute;
     top: 56px;
-    left: 32px;
+    left: 154px;
     width: 24px;
     opacity: 0;
 
@@ -105,12 +128,12 @@
    * Flyout Menu Anchor Positions
    * __________________________________________ */
 
-  .menu-item:hover ~ .flyout-menu-anchor-box {
+  .menu-item:not(.no-flyout):hover ~ .flyout-menu-anchor-box {
     opacity: 1;
   }
 
   .menu-item--resources:hover ~ .flyout-menu-anchor-box {
-    transform: translateX(116px);
+    transform: translateX(112px);
   }
 
   /*

@@ -116,6 +116,18 @@ class FlyoutMenuNav extends React.Component {
             className={styles["menu-item-list"]}
             onMouseLeave={() => this.handleNavigationMenuMouseLeave()}
           >
+            <li
+              className={`${styles["menu-item"]} ${styles["menu-item--training"]} ${styles["no-flyout"]}`}
+            >
+              <label>
+                <a
+                  href="https://growthtools.com/vip-training?utm_source=last-weeks-wins"
+                  target="_blank"
+                >
+                  TRAINING
+                </a>
+              </label>
+            </li>
             {/* Tools */}
             <li
               className={`${styles["menu-item"]} ${styles["menu-item--tools"]}`}
