@@ -100,12 +100,12 @@ function Footer(props) {
     <footer className={footerCSSClassName}>
       {/* Social Links */}
       <div className={styles["social-links"]}>
-        <a
+        {/* <a
           href="https://facebook.com/growthtool"
           className={styles["link-secondary"]}
         >
           <img src={iconFacebook} alt="Facebook icon" />
-        </a>
+        </a> */}
         {/*
         <a href="https://instagram.com/growthtools" className="link-secondary">
           <img src={iconInstagram} alt="Instagram icon" />
@@ -180,6 +180,7 @@ function Footer(props) {
         {/* User Action Buttons
          * Sign In + Create Account */}
         <div className={styles["user-actions"]}>
+          <div className={styles["user-actions__title"]}>Join Us</div>
           <a
             className={styles["user-actions__btn-signin"]}
             href={`${GROWTH_TOOLS_DOMAIN}/signin`}

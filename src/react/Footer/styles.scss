@@ -32,29 +32,28 @@ footer .social-links {
   transform: translateY(2px);
 
   a {
-      width: 32px;
-      height: 32px;
-      display: inline-block;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
   }
 
   /* spacing between links */
   a:not(:last-of-type) {
-      margin-right: 8px;
+    margin-right: 8px;
   }
 
   /* icons */
   img {
-      width: 32px;
+    width: 32px;
   }
 }
 
 footer .menu-group {
-
   &:last-of-type {
     flex-grow: 2;
   }
 
-  h4{
+  h4 {
     margin-bottom: 23px;
     display: flex;
     justify-content: space-between;
@@ -67,27 +66,25 @@ footer .menu-group {
      * Menu header links
      */
     a {
-        height: 20px;
-        color: #cfd8dc;
-        font-size: 14px;
-        font-family: $font-family-primary;
-        font-weight: $font-weight-900;
-        letter-spacing: 1.75px;
-        line-height: 20px;
+      height: 20px;
+      color: #cfd8dc;
+      font-size: 14px;
+      font-family: $font-family-primary;
+      font-weight: $font-weight-900;
+      letter-spacing: 1.75px;
+      line-height: 20px;
 
-        &:hover {
-          color: $light-green;
-        }
+      &:hover {
+        color: $light-green;
+      }
     }
   }
-
 }
 
 /**
  * NAVIGATION LISTS
  */
 .menu-group {
-
   .nav-list {
     display: flex;
     flex-direction: column;
@@ -124,47 +121,47 @@ footer .menu-group {
   * LOWER SECTION ( Growth Tools icon, copyright, privacy + terms )
   */
 .lower {
-    margin-top: 72px;
+  margin-top: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .logo {
+    height: 30px;
+  }
+
+  .logo img {
+    width: 30px;
+  }
+
+  .logo .mobile {
+    display: none;
+  }
+
+  .copyright {
+    margin-top: 17px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    height: 17px;
+    color: #90a4ae;
+    font-size: 12px;
+    font-weight: $font-weight-300;
+    line-height: 17px;
+    text-align: center;
 
-    .logo {
-        height: 30px;
+    /* Wrapper around "Growth Tools" */
+    span {
+      transform: translateY(-1px);
+      display: inline-block;
+      font-weight: $font-weight-500;
+      margin-left: 3px;
+      margin-right: 3px;
     }
 
-    .logo img {
-        width: 30px;
+    a {
+      color: #2cd886;
+      margin-left: 3px;
     }
-
-    .logo .mobile {
-      display: none;
-    }
-
-    .copyright {
-        margin-top: 17px;
-        display: flex;
-        height: 17px;
-        color: #90a4ae;
-        font-size: 12px;
-        font-weight: $font-weight-300;
-        line-height: 17px;
-        text-align: center;
-
-        /* Wrapper around "Growth Tools" */
-        span {
-            transform: translateY(-1px);
-            display: inline-block;
-            font-weight: $font-weight-500;
-            margin-left: 3px;
-            margin-right: 3px;
-        }
-
-        a {
-            color: #2cd886;
-            margin-left: 3px;
-        }
-    }
+  }
 }
 
 /*
@@ -174,48 +171,30 @@ footer .menu-group {
 footer .user-actions {
   flex-grow: 2;
   height: max-content;
-  margin-top: 46px;
-  padding-top: 24px;
   display: flex;
-  align-items: center;
-  border-top: 1px solid #2a3cb9;
+  align-items: start;
+  border-top: none;
+  flex-direction: column;
 
-  &__btn-signin {
-    @include flex-centered;
-    width: 98px;
-    font-weight: $font-weight-700;
-    border: 2px solid $light-green;
-
-    &:hover {
-      background-color: $light-green;
-      color: white;
-    }
-  }
-
-  &__btn-create-account {
-    flex-grow: 2;
-    max-width: 224px;
-    margin-left: 16px;
-    font-weight: $font-weight-500;
-    transition: 0.1s ease-out;
-    background-color: white;
-
-    &:hover {
-      background-color: $light-green;
-      color: white;
-    }
-  }
-
-  &__btn-signin,
-  &__btn-create-account {
-    @include flex-centered;
-    font-family: $font-family-primary;
-    height: 32px;
-    color: $light-green;
+  &__title {
+    font-family: "Brandon Text";
+    font-weight: 500;
     font-size: 14px;
-    line-height: 20px;
-    text-align: center;
-    border-radius: 6px;
+    line-height: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #263238;
+  }
+  &__btn-create-account,
+  &__btn-signin {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 32px;
+    color: #607d8b;
+    background-color: none;
+    box-shadow: none;
   }
 }
 
@@ -223,43 +202,30 @@ footer .user-actions {
  * LIGHTS ON THEME
  */
 footer.lights-on {
+  .menu-group h4 {
+    border-bottom-color: #cfd8dc;
 
-    .menu-group h4 {
-        border-bottom-color: #cfd8dc;
-
-        a {
-          color: #546e7a;
-        }
-
-        a:hover {
-          color: $light-green;
-        }
+    a {
+      color: #546e7a;
     }
 
-    .copyright span {
-        color: rgba(#546e7a, 0.8);
+    a:hover {
+      color: $light-green;
     }
+  }
 
-    /* Sign In + Create Account Buttons */
-    .user-actions {
-      border-top-color: #cfd8dc;
+  .copyright span {
+    color: rgba(#546e7a, 0.8);
+  }
 
-      &__btn-signin {
-        flex-shrink: 0;
-      }
+  /* Sign In + Create Account Buttons */
+  .user-actions {
+    border-top-color: none;
 
-      &__btn-create-account {
-        background-color: $light-green;
-        color: white;
-        box-shadow: 0 2px 12px 0 rgba(black, 0.18);
-
-        &:hover:not(:active) {
-          background-color: lighten($light-green, 10%);
-          border-color: lighten($light-green, 10%);
-          box-shadow: 2px 4px 12px 0 rgba(black, 0.18);
-        }
-      }
+    &__btn-signin {
+      flex-shrink: 0;
     }
+  }
 
   .user-actions,
   .lower {
@@ -290,7 +256,7 @@ footer.lights-on {
 
     .menu-group {
       h4,
-      .nav-list  {
+      .nav-list {
         padding-left: 6px;
       }
     }
@@ -320,7 +286,6 @@ footer.lights-on {
     top: -4.5rem;
     display: flex;
     justify-content: center;
-
   }
 
   footer .lower {
@@ -376,7 +341,7 @@ footer.lights-on {
       background-color: rgba(black, 0.1);
     }
 
-     /* Displays UI elements above the background layer */
+    /* Displays UI elements above the background layer */
     & > * {
       z-index: 1;
     }
