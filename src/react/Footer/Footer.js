@@ -45,6 +45,14 @@ const LINKS_RESOURCES = [
   }
 ];
 
+const LINKS_CASE_STUDIES = [
+  { name: "Idque Caesaris", href: "https://growthtools.com/" },
+  {
+    name: "Voluntate liceret",
+    href: "https://growthtools.com/"
+  }
+];
+
 const LINKS_TRAINING = [
   { name: "Growth University", href: `${GROWTH_TOOLS_DOMAIN}/training` },
   {
@@ -92,12 +100,12 @@ function Footer(props) {
     <footer className={footerCSSClassName}>
       {/* Social Links */}
       <div className={styles["social-links"]}>
-        <a
+        {/* <a
           href="https://facebook.com/growthtool"
           className={styles["link-secondary"]}
         >
           <img src={iconFacebook} alt="Facebook icon" />
-        </a>
+        </a> */}
         {/*
         <a href="https://instagram.com/growthtools" className="link-secondary">
           <img src={iconInstagram} alt="Instagram icon" />
@@ -116,6 +124,20 @@ function Footer(props) {
           </h4>
           <ul className={styles["nav-list"]}>
             {LINKS_FREE_TOOLS.map(getListItemLink)}
+          </ul>
+        </section>
+
+        {/* CASE STUDIES SECTION */}
+        <section className={styles["menu-group"]}>
+          <h4>
+            <a href="https://blog.videofruit.com">Case Studies</a>
+          </h4>
+          <ul
+            className={[styles["nav-list"], styles["nav-list--resources"]].join(
+              " "
+            )}
+          >
+            {LINKS_CASE_STUDIES.map(getListItemLink)}
           </ul>
         </section>
 
@@ -158,6 +180,7 @@ function Footer(props) {
         {/* User Action Buttons
          * Sign In + Create Account */}
         <div className={styles["user-actions"]}>
+          <div className={styles["user-actions__title"]}>Join Us</div>
           <a
             className={styles["user-actions__btn-signin"]}
             href={`${GROWTH_TOOLS_DOMAIN}/signin`}

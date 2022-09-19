@@ -124,7 +124,19 @@ class FlyoutMenuNav extends React.Component {
                   href="https://growthtools.com/vip-training?utm_source=last-weeks-wins"
                   target="_blank"
                 >
-                  TRAINING
+                  Live Show
+                </a>
+              </label>
+            </li>
+            <li
+              className={`${styles["menu-item"]} ${styles["menu-item--training"]} ${styles["no-flyout"]}`}
+            >
+              <label>
+                <a
+                  href="https://growthtools.com/vip-training?utm_source=last-weeks-wins"
+                  target="_blank"
+                >
+                  Case Studies
                 </a>
               </label>
             </li>
@@ -134,7 +146,7 @@ class FlyoutMenuNav extends React.Component {
               onMouseLeave={() => this.handleMenuItemMouseLeave("Tools")}
               onMouseEnter={() => this.handleMenuItemMouseEnter("Tools")}
             >
-              <label>TOOLS</label>
+              <label>Tools</label>
               <div className={toolsMenuCSSClass}>
                 <ToolsFlyout />
               </div>
@@ -146,7 +158,7 @@ class FlyoutMenuNav extends React.Component {
               onMouseLeave={() => this.handleMenuItemMouseLeave("Resources")}
               onMouseEnter={() => this.handleMenuItemMouseEnter("Resources")}
             >
-              <label>RESOURCES</label>
+              <label>Resources</label>
               <div className={resourcesMenuCSSClass}>
                 <ResourcesFlyout />
               </div>
