@@ -46,7 +46,7 @@ const LINKS_RESOURCES = [
 ];
 
 const LINKS_CASE_STUDIES = [
-  { name: "Case Studies", href: "https://videofruit.com/blog/category/case-study/" }
+  { name: "Case Studies", href: "https://youtu.be/vOi0Xta1-VM" }
 ];
 
 const LINKS_TRAINING = [
@@ -126,7 +126,7 @@ function Footer(props) {
         {/* CASE STUDIES SECTION */}
         <section className={styles["menu-group"]}>
           <h4>
-            <a href="https://videofruit.com/blog/category/case-study/">Case Studies</a>
+            <a href="https://youtu.be/vOi0Xta1-VM">Case Studies</a>
           </h4>
           <ul
             className={[styles["nav-list"], styles["nav-list--resources"]].join(
