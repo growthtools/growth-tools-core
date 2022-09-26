@@ -133,7 +133,7 @@ class FlyoutMenuNav extends React.Component {
             >
               <label>
                 <a
-                  href="https://videofruit.com/blog/category/case-study/"
+                  href="https://youtu.be/vOi0Xta1-VM"
                   target="_blank"
                 >
                   Case Studies
