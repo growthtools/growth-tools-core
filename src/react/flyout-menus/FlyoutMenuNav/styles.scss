@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import "../../../scss/abstracts/variables";
 @import "../../../scss/abstracts/mixins";
 
@@ -194,7 +196,7 @@
 
   @keyframes shiftLeftTools {
     from {
-      transform: scale((1/0.864), (1/0.973)) translateX(16px);
+      transform: scale(math.div(1, 0.864), math.div(1, 0.973)) translateX(16px);
     }
     to {
       transform: none;
@@ -203,7 +205,7 @@
 
   @keyframes shiftLeftResources {
     from {
-      transform: scaleY((1/1.14)) translateX(5px);
+      transform: scaleY(math.div(1, 1.14)) translateX(5px);
     }
     to {
       transform: none;
