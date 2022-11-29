@@ -6,12 +6,12 @@ import { workWithUsURLDesktop } from "../../js/utm_params";
 
 import FlyoutMenuNav from "../flyout-menus/FlyoutMenuNav/FlyoutMenuNav";
 import MobileMenu from "../MobileMenu/MobileMenu";
-import NewLogo from '../../images/GrowthToolsRedesign2022Logo.png';
+import NewLogo from '../../images/GrowthToolsLogo-white4x.png';
 
 const GROWTH_TOOLS_LOGO_DARK = `${GOOGLE_STORAGE_DOMAIN}/logo/green-bars.svg`;
 const GROWTH_TOOLS_LOGO_LIGHT = `${GOOGLE_STORAGE_DOMAIN}/logo/blue-bars.svg`;
 const GROWTH_TOOLS_ICON = `${GOOGLE_STORAGE_DOMAIN}/GT-icon@2x.png`;
-const GROWTH_TOOLS_NEW_LOGO = "../../images/GrowthToolsRedesign2022Logo.png";
+const GROWTH_TOOLS_NEW_LOGO = "../../images/GrowthToolsLogo-white4x.png";
 
 /**
  * Page header. Displays link to Growth Tools home page and
