@@ -39,36 +39,36 @@ const POPULAR_TOOLS = {
 };
 
 const OTHER_TOOLS = {
-  ListGoal: {
-    toolUrl: "https://listgoal.growthtools.com/",
-    logoSrc: TOOL_LOGO_LIST_GOAL,
-    logoWidth: "130px"
-  },
-  OneClick: {
-    toolUrl: "https://oneclick.growthtools.com/",
-    logoSrc: TOOL_LOGO_ONE_CLICK,
-    logoWidth: "127px"
-  },
-  Remind: {
-    toolUrl: "https://remind.growthtools.com",
-    logoSrc: TOOL_LOGO_REMIND,
-    logoWidth: "101px"
-  },
-  Welcomely: {
-    toolUrl: "https://welcome.ly/",
-    logoSrc: TOOL_LOGO_WELCOMELY,
-    logoWidth: "131px"
-  },
-  Agent: {
-    toolUrl: "https://agent.growthtools.com",
-    logoSrc: TOOL_LOGO_AGENT,
-    logoWidth: "83px"
-  },
-  DontHitPublish: {
-    toolUrl: "https://donthitpublish.com/",
-    logoSrc: TOOL_LOGO_DONT_HIT_PUBLISH,
-    logoWidth: "143px"
-  }
+  // ListGoal: {
+  //   toolUrl: "https://listgoal.growthtools.com/",
+  //   logoSrc: TOOL_LOGO_LIST_GOAL,
+  //   logoWidth: "130px"
+  // },
+  // OneClick: {
+  //   toolUrl: "https://oneclick.growthtools.com/",
+  //   logoSrc: TOOL_LOGO_ONE_CLICK,
+  //   logoWidth: "127px"
+  // },
+  // Remind: {
+  //   toolUrl: "https://remind.growthtools.com",
+  //   logoSrc: TOOL_LOGO_REMIND,
+  //   logoWidth: "101px"
+  // },
+  // Welcomely: {
+  //   toolUrl: "https://welcome.ly/",
+  //   logoSrc: TOOL_LOGO_WELCOMELY,
+  //   logoWidth: "131px"
+  // },
+  // Agent: {
+  //   toolUrl: "https://agent.growthtools.com",
+  //   logoSrc: TOOL_LOGO_AGENT,
+  //   logoWidth: "83px"
+  // },
+  // DontHitPublish: {
+  //   toolUrl: "https://donthitpublish.com/",
+  //   logoSrc: TOOL_LOGO_DONT_HIT_PUBLISH,
+  //   logoWidth: "143px"
+  // }
 };
 
 /******************************************** */
@@ -90,8 +90,8 @@ function ToolsFlyout(props) {
       </section>
 
       {/* Other Tools */}
-      {/* <section className={styles["tools-flyout__secondary"]}>
-        <h3 className={styles["tools-flyout__header"]}>OTHER TOOLS</h3>
+      <section className={styles["tools-flyout__secondary"]}>
+        {/* <h3 className={styles["tools-flyout__header"]}>OTHER TOOLS</h3> */}
         <ul className={styles["tools-flyout__other-list"]}>
           {[
             "ListGoal",
@@ -102,7 +102,7 @@ function ToolsFlyout(props) {
             "DontHitPublish"
           ].map(otherToolListItem)}
         </ul>
-      </section> */}
+      </section>
 
       {/* CTA button to replace secondary section on mobile layouts */}
       <div className={sharedStyles["tools-flyout__cta-btn"]}>
