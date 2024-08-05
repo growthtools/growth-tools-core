@@ -90,7 +90,7 @@ function ToolsFlyout(props) {
       </section>
 
       {/* Other Tools */}
-      <section className={styles["tools-flyout__secondary"]}>
+      {/* <section className={styles["tools-flyout__secondary"]}>
         <h3 className={styles["tools-flyout__header"]}>OTHER TOOLS</h3>
         <ul className={styles["tools-flyout__other-list"]}>
           {[
@@ -102,7 +102,7 @@ function ToolsFlyout(props) {
             "DontHitPublish"
           ].map(otherToolListItem)}
         </ul>
-      </section>
+      </section> */}
 
       {/* CTA button to replace secondary section on mobile layouts */}
       <div className={sharedStyles["tools-flyout__cta-btn"]}>
